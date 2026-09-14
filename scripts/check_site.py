@@ -34,5 +34,11 @@ projects = {"customer-churn-service", "demand-forecast-service", "visual-defect-
             "evidence-rag-service", "multimodal-search-service", "incident-triage-agent",
             "lora-ticket-classifier"}
 assert all(f"https://github.com/SaiMudunuri04/{name}" in links.hrefs for name in projects)
+assert all(
+    f"https://github.com/SaiMudunuri04/{name}/tree/main/k8s/helm/{name}" in links.hrefs
+    for name in projects
+), "Each project must link to its single Helm chart"
+assert 'id="theme-toggle"' in html and 'data-filter="all"' in html
+assert 'prefers-reduced-motion:reduce' in html
 assert "ai-engineering-projects" not in html
 print("Portfolio links and publication checks passed")
