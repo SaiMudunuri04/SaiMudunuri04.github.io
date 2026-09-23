@@ -12,6 +12,7 @@
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to main content</a>
+<div id="scroll-progress" aria-hidden="true"></div>
 
 <nav class="site-nav" aria-label="Primary">
   <div class="container nav-inner">
@@ -34,16 +35,25 @@
   <!-- Hero -->
   <header class="hero">
     <canvas id="net-canvas" aria-hidden="true"></canvas>
+    <div class="hero-grid" aria-hidden="true"></div>
+    <div class="hero-orbs" aria-hidden="true">
+      <span class="orb orb-a"></span>
+      <span class="orb orb-b"></span>
+      <span class="orb orb-c"></span>
+    </div>
     <div class="hero-vignette" aria-hidden="true"></div>
+    <div id="cursor-glow" aria-hidden="true"></div>
     <div class="container hero-inner">
       <span class="eyebrow"><span class="dot" aria-hidden="true"></span>Open to AI/ML engineering opportunities</span>
-      <h1>Sai Krishnam Raju <span class="grad">Mudunuri</span></h1>
+      <h1>Sai Krishnam Raju <span class="grad shine">Mudunuri</span></h1>
       <p class="role-line"><strong>AI/ML Engineer</strong> — Core ML, Deep Learning, GenAI, RAG &amp; AI Agents</p>
       <p class="hero-sub">I build the systems around a model: the data boundary, evaluation, serving path, and the way it is operated.</p>
       <div class="hero-ctas">
-        <a class="btn btn-primary" href="#projects">Explore projects ↗</a>
-        <a class="btn btn-ghost" href="resume.pdf">Download resume ↓</a>
+        <a class="btn btn-primary magnetic" href="#projects">Explore projects ↗</a>
+        <a class="btn btn-ghost magnetic" href="resume.pdf">Download resume ↓</a>
       </div>
+      <div class="telemetry" aria-hidden="true"><span class="t-prompt">$</span><span id="telemetry-line">build ············ passing</span><span class="t-caret">▍</span></div>
+      <p class="proof-strip reveal">10 inspectable repositories — code, tests, and deployment configs</p>
       <div class="hero-meta">
         <span>📍 Atlanta, Georgia</span>
         <span>💼 Honeywell · AI/ML Engineer</span>
@@ -61,30 +71,39 @@
       <p class="lede reveal">Measured outcomes from professional experience — the numbers behind the work.</p>
       <div class="impact-grid" role="list" aria-label="Measured outcomes">
         <div class="impact-card reveal" role="listitem">
-          <div class="num grad-text">30%</div>
+          <div class="num grad-text" data-count="30" data-suffix="%">0%</div>
           <div class="lbl">lower inference cost</div>
           <div class="sub">through complexity-aware routing</div>
         </div>
         <div class="impact-card reveal" role="listitem">
-          <div class="num grad-text">60%</div>
+          <div class="num grad-text" data-count="60" data-suffix="%">0%</div>
           <div class="lbl">less manual chart review</div>
           <div class="sub">with ClinicalBERT extraction</div>
         </div>
         <div class="impact-card reveal" role="listitem">
-          <div class="num grad-text">50%</div>
+          <div class="num grad-text" data-count="50" data-suffix="%">0%</div>
           <div class="lbl">faster model deployment</div>
           <div class="sub">through automated delivery</div>
         </div>
         <div class="impact-card reveal" role="listitem">
-          <div class="num grad-text">30%</div>
+          <div class="num grad-text" data-count="30" data-suffix="%">0%</div>
           <div class="lbl">fewer model-quality incidents</div>
           <div class="sub">with drift monitoring</div>
         </div>
         <div class="impact-card reveal" role="listitem">
-          <div class="num grad-text">15M+</div>
+          <div class="num grad-text" data-count="15" data-suffix="M+">0M+</div>
           <div class="lbl">clinical records</div>
           <div class="sub">transformed into risk features</div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tech ticker -->
+  <section class="marquee-band" aria-label="Technologies">
+    <div class="marquee" id="tech-marquee">
+      <div class="marquee-track">
+        <span>Python</span><span class="sep" aria-hidden="true">✦</span><span>PyTorch</span><span class="sep" aria-hidden="true">✦</span><span>LangGraph</span><span class="sep" aria-hidden="true">✦</span><span>vLLM</span><span class="sep" aria-hidden="true">✦</span><span>Kubernetes</span><span class="sep" aria-hidden="true">✦</span><span>Terraform</span><span class="sep" aria-hidden="true">✦</span><span>Amazon Bedrock</span><span class="sep" aria-hidden="true">✦</span><span>SageMaker</span><span class="sep" aria-hidden="true">✦</span><span>FastAPI</span><span class="sep" aria-hidden="true">✦</span><span>Docker</span><span class="sep" aria-hidden="true">✦</span><span>Helm</span><span class="sep" aria-hidden="true">✦</span><span>Argo CD</span><span class="sep" aria-hidden="true">✦</span><span>OpenSearch</span><span class="sep" aria-hidden="true">✦</span><span>MLflow</span><span class="sep" aria-hidden="true">✦</span><span>PySpark</span><span class="sep" aria-hidden="true">✦</span><span>LoRA</span><span class="sep" aria-hidden="true">✦</span><span>RAG</span><span class="sep" aria-hidden="true">✦</span><span>MCP</span><span class="sep" aria-hidden="true">✦</span><span>Hugging Face</span><span class="sep" aria-hidden="true">✦</span><span>LangChain</span><span class="sep" aria-hidden="true">✦</span><span>EKS</span><span class="sep" aria-hidden="true">✦</span><span>CI/CD</span><span class="sep" aria-hidden="true">✦</span><span>XGBoost</span><span class="sep" aria-hidden="true">✦</span><span>scikit-learn</span><span class="sep" aria-hidden="true">✦</span><span class="marquee-dup" aria-hidden="true" style="display:contents"><span>Python</span><span class="sep" aria-hidden="true">✦</span><span>PyTorch</span><span class="sep" aria-hidden="true">✦</span><span>LangGraph</span><span class="sep" aria-hidden="true">✦</span><span>vLLM</span><span class="sep" aria-hidden="true">✦</span><span>Kubernetes</span><span class="sep" aria-hidden="true">✦</span><span>Terraform</span><span class="sep" aria-hidden="true">✦</span><span>Amazon Bedrock</span><span class="sep" aria-hidden="true">✦</span><span>SageMaker</span><span class="sep" aria-hidden="true">✦</span><span>FastAPI</span><span class="sep" aria-hidden="true">✦</span><span>Docker</span><span class="sep" aria-hidden="true">✦</span><span>Helm</span><span class="sep" aria-hidden="true">✦</span><span>Argo CD</span><span class="sep" aria-hidden="true">✦</span><span>OpenSearch</span><span class="sep" aria-hidden="true">✦</span><span>MLflow</span><span class="sep" aria-hidden="true">✦</span><span>PySpark</span><span class="sep" aria-hidden="true">✦</span><span>LoRA</span><span class="sep" aria-hidden="true">✦</span><span>RAG</span><span class="sep" aria-hidden="true">✦</span><span>MCP</span><span class="sep" aria-hidden="true">✦</span><span>Hugging Face</span><span class="sep" aria-hidden="true">✦</span><span>LangChain</span><span class="sep" aria-hidden="true">✦</span><span>EKS</span><span class="sep" aria-hidden="true">✦</span><span>CI/CD</span><span class="sep" aria-hidden="true">✦</span><span>XGBoost</span><span class="sep" aria-hidden="true">✦</span><span>scikit-learn</span><span class="sep" aria-hidden="true">✦</span></span>
       </div>
     </div>
   </section>
@@ -277,6 +296,10 @@
 <script src="projects.js"></script>
 <script>
 (function () {
+  'use strict';
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var finePointer = window.matchMedia && window.matchMedia('(pointer: fine)').matches;
+
   var grid = document.getElementById('project-grid');
   var count = document.getElementById('result-count');
   var buttons = Array.prototype.slice.call(document.querySelectorAll('.filter-btn'));
@@ -295,32 +318,64 @@
     });
   }
 
-  function cardHTML(p, i) {
-    var accent = ACCENT[p.category] || 'cyan';
-    var links = '';
+  function linkRow(p) {
     if (p.status === 'live') {
-      links = '<div class="card-links">' +
+      return '<div class="card-links">' +
         '<a class="card-link" href="' + p.repo + '"><span>Explore repository</span><span aria-hidden="true">↗</span></a>' +
         '<a class="card-link card-link--helm" href="' + p.helm + '"><span>Helm chart</span><span aria-hidden="true">↗</span></a></div>';
-    } else {
-      links = '<span class="in-progress-badge">● In progress</span>';
     }
+    return '<span class="in-progress-badge">● In progress</span>';
+  }
+
+  function cardHTML(p, i, delay) {
+    var accent = ACCENT[p.category] || 'cyan';
     var tags = p.tags.map(function (t) { return '<span class="tag">' + esc(t) + '</span>'; }).join('');
-    return '<article class="project-card accent-' + accent + '" data-category="' + esc(p.category) + '">' +
+    return '<article class="project-card tilt accent-' + accent + '" data-category="' + esc(p.category) + '"' +
+      (delay ? ' style="transition-delay:' + delay + 'ms"' : '') + '>' +
       '<div class="card-glow" aria-hidden="true"></div>' +
       '<div class="card-top"><span class="card-index">' + String(i + 1).padStart(2, '0') + ' / ' + PROJECTS.length + '</span>' +
       '<span class="card-cat">' + esc(p.category) + '</span></div>' +
       '<h3>' + esc(p.title) + '</h3>' +
       '<p class="desc">' + esc(p.summary) + '</p>' +
       '<div class="pipeline">' + esc(p.pipeline) + '</div>' +
-      '<div class="tag-row">' + tags + '</div>' + links + '</article>';
+      '<div class="tag-row">' + tags + '</div>' + linkRow(p) + '</article>';
+  }
+
+  function showcaseHTML(p) {
+    var accent = ACCENT[p.category] || 'cyan';
+    var tags = p.tags.map(function (t) { return '<span class="tag">' + esc(t) + '</span>'; }).join('');
+    var steps = p.pipeline.split('→').map(function (s) { return esc(s.trim()); });
+    var stepsHTML = steps.map(function (s, k) {
+      return '<li class="show-step"><span class="show-step-num">' + (k + 1) + '</span><span>' + s + '</span></li>' +
+        (k < steps.length - 1 ? '<li class="show-arrow" aria-hidden="true">↓</li>' : '');
+    }).join('');
+    return '<article class="project-card tilt project-showcase accent-' + accent + '" data-category="' + esc(p.category) + '">' +
+      '<div class="card-glow" aria-hidden="true"></div>' +
+      '<div class="show-main">' +
+      '<div class="show-flag"><span class="show-star" aria-hidden="true">★</span> Featured build</div>' +
+      '<div class="card-top"><span class="card-index">01 / ' + PROJECTS.length + '</span>' +
+      '<span class="card-cat">' + esc(p.category) + '</span></div>' +
+      '<h3>' + esc(p.title) + '</h3>' +
+      '<p class="desc">' + esc(p.summary) + '</p>' +
+      '<div class="tag-row">' + tags + '</div>' + linkRow(p) + '</div>' +
+      '<div class="show-panel">' +
+      '<div class="show-panel-head">' + esc(p.name) + '</div>' +
+      '<ol class="show-steps">' + stepsHTML + '</ol>' +
+      '<div class="show-panel-foot">code · tests · helm · docs</div>' +
+      '</div></article>';
   }
 
   function render(filter) {
     var visible = PROJECTS.filter(function (p) { return filter === 'all' || p.category === filter; });
-    grid.innerHTML = visible.map(function (p) { return cardHTML(p, PROJECTS.indexOf(p)); }).join('');
+    var html = visible.map(function (p, vi) {
+      var i = PROJECTS.indexOf(p);
+      if (filter === 'all' && vi === 0) return showcaseHTML(p);
+      return cardHTML(p, i, reduceMotion ? 0 : (vi % 6) * 55);
+    }).join('');
+    grid.innerHTML = html;
     count.textContent = 'Showing ' + visible.length + ' of ' + PROJECTS.length + ' projects — code, tests, and Helm chart for every shipped project.';
     observeReveals();
+    initTilt();
   }
 
   buttons.forEach(function (btn) {
@@ -345,7 +400,7 @@
     applyTheme(document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
   });
 
-  // Reveal-on-scroll
+  // Reveal-on-scroll (with stagger support via inline transition-delay)
   var revealIO = null;
   function observeReveals() {
     var els = document.querySelectorAll('.reveal:not(.in)');
@@ -362,11 +417,163 @@
     els.forEach(function (el) { revealIO.observe(el); });
   }
 
+  // Count-up numbers in the impact band
+  (function countUp() {
+    var nums = document.querySelectorAll('.impact-card .num[data-count]');
+    function setFinal(el) {
+      el.textContent = el.getAttribute('data-count') + el.getAttribute('data-suffix');
+    }
+    if (reduceMotion || !('IntersectionObserver' in window)) {
+      nums.forEach(setFinal);
+      return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (!en.isIntersecting) return;
+        var el = en.target;
+        io.unobserve(el);
+        var target = parseInt(el.getAttribute('data-count'), 10);
+        var suffix = el.getAttribute('data-suffix');
+        var t0 = null, dur = 1300;
+        function frame(t) {
+          if (t0 === null) t0 = t;
+          var k = Math.min(1, (t - t0) / dur);
+          var eased = 1 - Math.pow(1 - k, 3);
+          el.textContent = Math.round(target * eased) + suffix;
+          if (k < 1) requestAnimationFrame(frame);
+        }
+        requestAnimationFrame(frame);
+      });
+    }, { threshold: 0.4 });
+    nums.forEach(function (el) { io.observe(el); });
+  })();
+
+  // Telemetry status cycler (decorative system motif)
+  (function telemetry() {
+    var line = document.getElementById('telemetry-line');
+    if (!line) return;
+    var lines = [
+      'build ············ passing',
+      'tests ············ green',
+      'deploy ··········· synced',
+      'monitor ·········· live'
+    ];
+    var i = 0;
+    if (reduceMotion) { line.textContent = lines[0]; return; }
+    setInterval(function () {
+      i = (i + 1) % lines.length;
+      line.style.opacity = '0';
+      setTimeout(function () {
+        line.textContent = lines[i];
+        line.style.opacity = '1';
+      }, 220);
+    }, 2600);
+  })();
+
+  // Subtle 3D tilt on project cards
+  function initTilt() {
+    if (reduceMotion || !finePointer) return;
+    var cards = document.querySelectorAll('.project-card.tilt');
+    cards.forEach(function (card) {
+      card.addEventListener('mousemove', function (e) {
+        var r = card.getBoundingClientRect();
+        var px = (e.clientX - r.left) / r.width - 0.5;
+        var py = (e.clientY - r.top) / r.height - 0.5;
+        card.style.transform = 'perspective(900px) rotateX(' + (-py * 5).toFixed(2) + 'deg) rotateY(' + (px * 6).toFixed(2) + 'deg) translateY(-6px)';
+      });
+      card.addEventListener('mouseleave', function () {
+        card.style.transform = '';
+      });
+    });
+  }
+
+  // Magnetic CTA buttons
+  (function magnetic() {
+    if (reduceMotion || !finePointer) return;
+    var btns = document.querySelectorAll('.magnetic');
+    btns.forEach(function (btn) {
+      btn.addEventListener('mousemove', function (e) {
+        var r = btn.getBoundingClientRect();
+        var dx = e.clientX - (r.left + r.width / 2);
+        var dy = e.clientY - (r.top + r.height / 2);
+        btn.style.transform = 'translate(' + (dx * 0.12).toFixed(1) + 'px,' + (dy * 0.18).toFixed(1) + 'px)';
+      });
+      btn.addEventListener('mouseleave', function () { btn.style.transform = ''; });
+    });
+  })();
+
+  // Cursor-following ambient glow inside the hero
+  (function cursorGlow() {
+    var glow = document.getElementById('cursor-glow');
+    var hero = document.querySelector('.hero');
+    if (!glow || !hero || reduceMotion || !finePointer) return;
+    var x = 0, y = 0, tx = 0, ty = 0, raf = null;
+    function loop() {
+      x += (tx - x) * 0.12; y += (ty - y) * 0.12;
+      glow.style.transform = 'translate(' + x.toFixed(1) + 'px,' + y.toFixed(1) + 'px)';
+      raf = requestAnimationFrame(loop);
+    }
+    hero.addEventListener('mousemove', function (e) {
+      var r = hero.getBoundingClientRect();
+      tx = e.clientX - r.left; ty = e.clientY - r.top;
+      if (!raf) loop();
+    });
+    hero.addEventListener('mouseleave', function () {
+      if (raf) { cancelAnimationFrame(raf); raf = null; }
+      glow.style.opacity = '0';
+    });
+    hero.addEventListener('mouseenter', function () { glow.style.opacity = '1'; });
+  })();
+
+  // Active nav highlighting
+  (function activeNav() {
+    var links = Array.prototype.slice.call(document.querySelectorAll('.nav-links a'));
+    var map = {};
+    links.forEach(function (a) { map[a.getAttribute('href').slice(1)] = a; });
+    if (!('IntersectionObserver' in window)) return;
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        var a = map[en.target.id];
+        if (!a) return;
+        if (en.isIntersecting) {
+          links.forEach(function (l) { l.classList.remove('active'); });
+          a.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-40% 0px -55% 0px' });
+    Object.keys(map).forEach(function (id) {
+      var s = document.getElementById(id);
+      if (s) io.observe(s);
+    });
+  })();
+
+  // Scroll progress bar + hero parallax (single rAF-throttled listener)
+  (function scrollFX() {
+    var bar = document.getElementById('scroll-progress');
+    var hero = document.querySelector('.hero');
+    var orbs = document.querySelector('.hero-orbs');
+    var canvas = document.getElementById('net-canvas');
+    var ticking = false;
+    function update() {
+      ticking = false;
+      var y = window.scrollY || window.pageYOffset;
+      var max = document.documentElement.scrollHeight - window.innerHeight;
+      if (bar && max > 0) bar.style.transform = 'scaleX(' + (y / max).toFixed(4) + ')';
+      if (!reduceMotion && hero && y < hero.offsetHeight * 1.2) {
+        if (orbs) orbs.style.transform = 'translateY(' + (y * 0.18).toFixed(1) + 'px)';
+        if (canvas) canvas.style.transform = 'translateY(' + (y * 0.08).toFixed(1) + 'px)';
+      }
+    }
+    window.addEventListener('scroll', function () {
+      if (!ticking) { ticking = true; requestAnimationFrame(update); }
+    }, { passive: true });
+    update();
+  })();
+
   // Neural-network canvas in the hero
   (function initCanvas() {
     var canvas = document.getElementById('net-canvas');
     if (!canvas || !canvas.getContext) return;
-    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     var ctx = canvas.getContext('2d');
     var w = 0, h = 0, nodes = [], running = true, dpr = 1;
 
@@ -423,12 +630,12 @@
 
     window.addEventListener('resize', resize);
     document.addEventListener('visibilitychange', function () {
-      if (reduce) return;
+      if (reduceMotion) return;
       running = !document.hidden;
       if (running) requestAnimationFrame(step);
     });
     resize();
-    if (!reduce) requestAnimationFrame(step);
+    if (!reduceMotion) requestAnimationFrame(step);
   })();
 
   render('all');
