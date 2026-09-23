@@ -47,19 +47,19 @@ for href in links.hrefs:
 rendered_urls = set(re.findall(r"https://github\.com/SaiMudunuri04/[A-Za-z0-9_.\-/]+", combined))
 projects = {"customer-churn-service", "demand-forecast-service", "visual-defect-service",
             "evidence-rag-service", "multimodal-search-service", "incident-triage-agent",
-            "lora-ticket-classifier"}
+            "lora-ticket-classifier", "isolation-forest-anomaly-detection",
+            "langgraph-support-agent", "mcp-agent-toolkit"}
 assert all(f"https://github.com/SaiMudunuri04/{name}" in rendered_urls for name in projects)
+k8s_helm = {"customer-churn-service", "demand-forecast-service", "visual-defect-service",
+            "evidence-rag-service", "multimodal-search-service", "incident-triage-agent",
+            "lora-ticket-classifier"}
 assert all(
     f"https://github.com/SaiMudunuri04/{name}/tree/main/k8s/helm/{name}" in rendered_urls
-    for name in projects
-), "Each shipped project must link to its single Helm chart"
-
-# Upcoming projects render an "In progress" badge with NO repo link (never link to 404s).
-upcoming = {"isolation-forest-anomaly-detection", "langgraph-support-agent", "mcp-agent-toolkit"}
-for name in upcoming:
-    assert name in js, f"Upcoming project missing from projects.js: {name}"
-    assert f"https://github.com/SaiMudunuri04/{name}" not in rendered_urls, \
-        f"Upcoming project must not link to a repo that may not exist: {name}"
+    for name in k8s_helm
+), "Each shipped k8s project must link to its single Helm chart"
+assert "https://github.com/SaiMudunuri04/isolation-forest-anomaly-detection/tree/main/k8s/helm/isolation-forest" in rendered_urls
+assert "https://github.com/SaiMudunuri04/langgraph-support-agent/tree/main/helm/support-agent" in rendered_urls
+assert "https://github.com/SaiMudunuri04/mcp-agent-toolkit/tree/main/helm/mcp-toolkit" in rendered_urls
 
 assert 'id="theme-toggle"' in html and 'data-filter="all"' in html
 assert "prefers-reduced-motion" in html + css
