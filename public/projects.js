@@ -82,29 +82,35 @@ const PROJECTS = [
   },
   {
     name: "isolation-forest-anomaly-detection",
+    repo: "https://github.com/SaiMudunuri04/isolation-forest-anomaly-detection",
+    helm: "https://github.com/SaiMudunuri04/isolation-forest-anomaly-detection/tree/main/k8s/helm/isolation-forest",
     category: "Core ML",
     title: "Isolation Forest anomaly detection",
     summary: "Isolation Forest over industrial equipment telemetry — the same approach behind a ~15–25% reduction in unplanned downtime in production ML work.",
     pipeline: "Telemetry → Isolation Forest → Degradation alerts",
     tags: ["Anomaly detection", "scikit-learn", "MLOps"],
-    status: "progress"
+    status: "live"
   },
   {
     name: "langgraph-support-agent",
+    repo: "https://github.com/SaiMudunuri04/langgraph-support-agent",
+    helm: "https://github.com/SaiMudunuri04/langgraph-support-agent/tree/main/helm/support-agent",
     category: "Agents",
     title: "LangGraph support copilot",
     summary: "LangChain + LangGraph support agent with LangSmith traceability, tool use, guardrailed outputs, and an evaluated golden set.",
     pipeline: "Query → Retrieve → Generate → Validate",
     tags: ["LangGraph", "LangSmith", "AWS Bedrock"],
-    status: "progress"
+    status: "live"
   },
   {
     name: "mcp-agent-toolkit",
+    repo: "https://github.com/SaiMudunuri04/mcp-agent-toolkit",
+    helm: "https://github.com/SaiMudunuri04/mcp-agent-toolkit/tree/main/helm/mcp-toolkit",
     category: "Agents",
     title: "MCP agent toolkit",
     summary: "FastMCP tool server with a LangGraph agent client — scoped permissions, authenticated tools, and validated outputs.",
     pipeline: "Agent → MCP tools → Validated result",
     tags: ["MCP", "FastMCP", "LangGraph"],
-    status: "progress"
+    status: "live"
   }
 ];
