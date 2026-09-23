@@ -1,10 +1,13 @@
 <!DOCTYPE html>
-<html lang="en" id="top">
+<html lang="en" id="top" data-theme="dark">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Sai Mudunuri — AI/ML Engineer</title>
 <meta name="description" content="Sai Krishnam Raju Mudunuri — AI/ML Engineer working across Core ML, Deep Learning, Generative AI, RAG and AI Agents. Inspectable projects, production experience at Honeywell and Infosys.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -12,7 +15,7 @@
 
 <nav class="site-nav" aria-label="Primary">
   <div class="container nav-inner">
-    <a class="brand-mark" href="#top" aria-label="Sai Mudunuri — back to top">SM</a>
+    <a class="brand-mark" href="#top" aria-label="Sai Mudunuri — back to top"><span class="brand-glyph" aria-hidden="true">◈</span>SM</a>
     <div class="nav-links">
       <a href="#projects">Projects</a>
       <a href="#experience">Experience</a>
@@ -21,7 +24,7 @@
       <a href="#contact">Contact</a>
     </div>
     <div class="nav-actions">
-      <button class="theme-btn" id="theme-toggle" type="button" aria-label="Toggle dark and light theme" title="Toggle theme">☾</button>
+      <button class="theme-btn" id="theme-toggle" type="button" aria-label="Toggle dark and light theme" title="Toggle theme">☀</button>
       <a class="btn btn-primary btn-sm" href="resume.pdf">Resume ↓</a>
     </div>
   </div>
@@ -30,10 +33,13 @@
 <main id="main">
   <!-- Hero -->
   <header class="hero">
+    <canvas id="net-canvas" aria-hidden="true"></canvas>
+    <div class="hero-vignette" aria-hidden="true"></div>
     <div class="container hero-inner">
       <span class="eyebrow"><span class="dot" aria-hidden="true"></span>Open to AI/ML engineering opportunities</span>
-      <h1>Sai Krishnam Raju Mudunuri</h1>
-      <p class="role-line"><strong>AI/ML Engineer</strong> — Core ML, Deep Learning, Generative AI, RAG &amp; AI Agents. I build the systems around a model: the data boundary, evaluation, serving path, and the way it is operated.</p>
+      <h1>Sai Krishnam Raju <span class="grad">Mudunuri</span></h1>
+      <p class="role-line"><strong>AI/ML Engineer</strong> — Core ML, Deep Learning, GenAI, RAG &amp; AI Agents</p>
+      <p class="hero-sub">I build the systems around a model: the data boundary, evaluation, serving path, and the way it is operated.</p>
       <div class="hero-ctas">
         <a class="btn btn-primary" href="#projects">Explore projects ↗</a>
         <a class="btn btn-ghost" href="resume.pdf">Download resume ↓</a>
@@ -43,22 +49,53 @@
         <span>💼 Honeywell · AI/ML Engineer</span>
         <span>🎓 M.S. Information Systems Technology</span>
       </div>
-      <div class="stats" role="list" aria-label="Career highlights">
-        <div class="stat" role="listitem"><div class="num">3+ yrs</div><div class="lbl">AI/ML engineering experience</div></div>
-        <div class="stat" role="listitem"><div class="num">10</div><div class="lbl">Engineering projects — 7 shipped, 3 in progress</div></div>
-        <div class="stat" role="listitem"><div class="num">~15–25%</div><div class="lbl">Unplanned downtime reduction, Honeywell anomaly detection</div></div>
-        <div class="stat" role="listitem"><div class="num">15M+</div><div class="lbl">Clinical records engineered into risk features</div></div>
-      </div>
+      <a class="scroll-hint" href="#impact" aria-label="Scroll to measured impact"><span class="mouse" aria-hidden="true"><span class="wheel"></span></span></a>
     </div>
   </header>
+
+  <!-- Verified impact -->
+  <section class="impact-band" id="impact" aria-labelledby="impact-title">
+    <div class="container">
+      <p class="kicker reveal">Verified impact</p>
+      <h2 id="impact-title" class="reveal">Measured outcomes, not adjectives</h2>
+      <p class="lede reveal">Measured outcomes from professional experience — the numbers behind the work.</p>
+      <div class="impact-grid" role="list" aria-label="Measured outcomes">
+        <div class="impact-card reveal" role="listitem">
+          <div class="num grad-text">30%</div>
+          <div class="lbl">lower inference cost</div>
+          <div class="sub">through complexity-aware routing</div>
+        </div>
+        <div class="impact-card reveal" role="listitem">
+          <div class="num grad-text">60%</div>
+          <div class="lbl">less manual chart review</div>
+          <div class="sub">with ClinicalBERT extraction</div>
+        </div>
+        <div class="impact-card reveal" role="listitem">
+          <div class="num grad-text">50%</div>
+          <div class="lbl">faster model deployment</div>
+          <div class="sub">through automated delivery</div>
+        </div>
+        <div class="impact-card reveal" role="listitem">
+          <div class="num grad-text">30%</div>
+          <div class="lbl">fewer model-quality incidents</div>
+          <div class="sub">with drift monitoring</div>
+        </div>
+        <div class="impact-card reveal" role="listitem">
+          <div class="num grad-text">15M+</div>
+          <div class="lbl">clinical records</div>
+          <div class="sub">transformed into risk features</div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Projects -->
   <section class="section" id="projects" aria-labelledby="projects-title">
     <div class="container">
-      <p class="kicker">Selected work</p>
-      <h2 id="projects-title">Systems you can inspect</h2>
-      <p class="lede">Independent engineering repositories spanning core ML, retrieval, vision, agent workflows, and fine-tuning. Every project ships code, tests, deployment configuration, and documentation — designed to be read, run, and reviewed.</p>
-      <div class="filters" role="group" aria-label="Filter projects by category">
+      <p class="kicker reveal">Selected work</p>
+      <h2 id="projects-title" class="reveal">Systems you can <span class="grad">inspect</span></h2>
+      <p class="lede reveal">Ten independent engineering repositories spanning core ML, retrieval, vision, agent workflows, and fine-tuning. Every project ships code, tests, deployment configuration, and documentation — designed to be read, run, and reviewed.</p>
+      <div class="filters reveal" role="group" aria-label="Filter projects by category">
         <button class="filter-btn" type="button" data-filter="all" aria-pressed="true">All</button>
         <button class="filter-btn" type="button" data-filter="Core ML" aria-pressed="false">Core ML</button>
         <button class="filter-btn" type="button" data-filter="Generative AI" aria-pressed="false">Generative AI</button>
@@ -68,7 +105,7 @@
       </div>
       <p class="result-count" id="result-count" aria-live="polite"></p>
       <div class="project-grid" id="project-grid"></div>
-      <aside class="disclaimer">
+      <aside class="disclaimer reveal">
         <strong>Independent repos.</strong> These are independent engineering repositories — employment work and portfolio code are presented separately. Running cloud training or deploying to Kubernetes requires your own account, data, model artifacts, and cluster; this portfolio does not claim live production deployments.
       </aside>
     </div>
@@ -77,15 +114,17 @@
   <!-- Experience -->
   <section class="section alt" id="experience" aria-labelledby="experience-title">
     <div class="container">
-      <p class="kicker">Experience</p>
-      <h2 id="experience-title">The work behind the work</h2>
-      <p class="lede">Professional experience informs how these independent projects are built — the same care for evaluation, serving, and operations.</p>
+      <p class="kicker reveal">Experience</p>
+      <h2 id="experience-title" class="reveal">The work behind <span class="grad">the work</span></h2>
+      <p class="lede reveal">Professional experience informs how these independent projects are built — the same care for evaluation, serving, and operations.</p>
       <ol class="timeline">
-        <li class="timeline-item">
+        <li class="timeline-item reveal">
           <article class="job-card">
             <div class="job-head">
-              <h3>AI/ML Engineer</h3>
-              <span class="job-co">Honeywell · Georgia</span>
+              <div>
+                <h3>AI/ML Engineer</h3>
+                <span class="job-co">Honeywell · Georgia</span>
+              </div>
               <span class="job-dates">OCT 2024 — PRESENT</span>
             </div>
             <ul>
@@ -99,11 +138,13 @@
             </ul>
           </article>
         </li>
-        <li class="timeline-item">
+        <li class="timeline-item reveal">
           <article class="job-card">
             <div class="job-head">
-              <h3>ML Engineer</h3>
-              <span class="job-co">Infosys · India</span>
+              <div>
+                <h3>ML Engineer</h3>
+                <span class="job-co">Infosys · India</span>
+              </div>
               <span class="job-dates">JAN 2022 — JUL 2023</span>
             </div>
             <ul>
@@ -123,21 +164,21 @@
   <!-- Approach -->
   <section class="section" id="approach" aria-labelledby="approach-title">
     <div class="container">
-      <p class="kicker">Approach</p>
-      <h2 id="approach-title">Good models need good systems</h2>
-      <p class="lede">My work connects model behavior to dependable software — how a system fails, what evidence it returns, and whether another engineer can understand it later.</p>
+      <p class="kicker reveal">Approach</p>
+      <h2 id="approach-title" class="reveal">Good models need <span class="grad">good systems</span></h2>
+      <p class="lede reveal">My work connects model behavior to dependable software — how a system fails, what evidence it returns, and whether another engineer can understand it later.</p>
       <div class="steps">
-        <div class="step">
+        <div class="step reveal">
           <div class="step-num">01</div>
           <h3>Define</h3>
           <p>Start at the boundary. Explicit inputs, data validation, and leakage-aware evaluation create a trustworthy baseline before complexity grows.</p>
         </div>
-        <div class="step">
+        <div class="step reveal">
           <div class="step-num">02</div>
           <h3>Build</h3>
           <p>Make decisions visible. Documented architecture, inspectable code, and tests reveal why a model or retrieval system behaves as it does.</p>
         </div>
-        <div class="step">
+        <div class="step reveal">
           <div class="step-num">03</div>
           <h3>Operate</h3>
           <p>Design for the handoff. Health endpoints, deployment configuration, observability, and runbooks make the next step clear when things go wrong.</p>
@@ -149,32 +190,32 @@
   <!-- Skills -->
   <section class="section alt" id="skills" aria-labelledby="skills-title">
     <div class="container">
-      <p class="kicker">Toolkit</p>
-      <h2 id="skills-title">A focused engineering toolkit</h2>
-      <p class="lede">Skills grouped around the work recruiters can inspect: modeling, retrieval, cloud delivery, and the operational systems that make AI useful.</p>
+      <p class="kicker reveal">Toolkit</p>
+      <h2 id="skills-title" class="reveal">A focused <span class="grad">engineering toolkit</span></h2>
+      <p class="lede reveal">Skills grouped around the work recruiters can inspect: modeling, retrieval, cloud delivery, and the operational systems that make AI useful.</p>
       <div class="skill-groups">
-        <div class="skill-group">
-          <h3>Modeling</h3><div class="sub">ML &amp; data</div>
+        <div class="skill-group reveal">
+          <h3><span class="sg-dot" style="--dot:#38bdf8" aria-hidden="true"></span>Modeling</h3><div class="sub">ML &amp; data</div>
           <p class="items">Python · SQL · PyTorch · TensorFlow · scikit-learn · XGBoost · LightGBM · Pandas · NumPy · PySpark · SHAP · Feature engineering · Model evaluation · Hyperparameter tuning · Optuna · ClinicalBERT</p>
         </div>
-        <div class="skill-group">
-          <h3>Intelligence</h3><div class="sub">Generative AI &amp; NLP</div>
+        <div class="skill-group reveal">
+          <h3><span class="sg-dot" style="--dot:#a78bfa" aria-hidden="true"></span>Intelligence</h3><div class="sub">Generative AI &amp; NLP</div>
           <p class="items">Amazon Bedrock · Hugging Face Transformers · LangChain · LangGraph · LlamaIndex · RAG · MCP · FastMCP · vLLM · AI agents · Prompt engineering · LoRA · QLoRA · PEFT · Mistral · LLaMA · Claude · Titan embeddings</p>
         </div>
-        <div class="skill-group">
-          <h3>Retrieval</h3><div class="sub">Vector search &amp; retrieval</div>
+        <div class="skill-group reveal">
+          <h3><span class="sg-dot" style="--dot:#34d399" aria-hidden="true"></span>Retrieval</h3><div class="sub">Vector search &amp; retrieval</div>
           <p class="items">Amazon OpenSearch · FAISS · BM25 · Pinecone · Redis · Embeddings · Hybrid search · Metadata filtering · Reranking</p>
         </div>
-        <div class="skill-group">
-          <h3>Cloud</h3><div class="sub">AWS &amp; inference APIs</div>
+        <div class="skill-group reveal">
+          <h3><span class="sg-dot" style="--dot:#fbbf24" aria-hidden="true"></span>Cloud</h3><div class="sub">AWS &amp; inference APIs</div>
           <p class="items">EC2 · S3 · ECR · EKS · Lambda · API Gateway · SageMaker · SageMaker Pipelines · Model Registry · VPC · IAM · FastAPI · REST APIs</p>
         </div>
-        <div class="skill-group">
-          <h3>Delivery</h3><div class="sub">Delivery &amp; MLOps</div>
+        <div class="skill-group reveal">
+          <h3><span class="sg-dot" style="--dot:#f472b6" aria-hidden="true"></span>Delivery</h3><div class="sub">Delivery &amp; MLOps</div>
           <p class="items">Linux · Git · Docker · Kubernetes · Terraform · Helm · Argo CD · CI/CD · MLflow · DVC · Model versioning · Canary releases</p>
         </div>
-        <div class="skill-group">
-          <h3>Operate</h3><div class="sub">Observability &amp; pipelines</div>
+        <div class="skill-group reveal">
+          <h3><span class="sg-dot" style="--dot:#22d3ee" aria-hidden="true"></span>Operate</h3><div class="sub">Observability &amp; pipelines</div>
           <p class="items">Prometheus · Grafana · CloudWatch · Latency tracing · ETL · Batch processing · Data quality · S3 data lakes</p>
         </div>
       </div>
@@ -184,16 +225,16 @@
   <!-- Education -->
   <section class="section" id="education" aria-labelledby="education-title">
     <div class="container">
-      <p class="kicker">Foundation</p>
-      <h2 id="education-title">Education &amp; credentials</h2>
-      <p class="lede">Formal study, hands-on engineering, and continued practice across model development and software delivery.</p>
+      <p class="kicker reveal">Foundation</p>
+      <h2 id="education-title" class="reveal">Education &amp; <span class="grad">credentials</span></h2>
+      <p class="lede reveal">Formal study, hands-on engineering, and continued practice across model development and software delivery.</p>
       <div class="edu-grid">
-        <div class="edu-card">
+        <div class="edu-card reveal">
           <div class="deg">Graduate study</div>
           <h3>Master's in Information Systems Technology</h3>
           <p>Wilmington University</p>
         </div>
-        <div class="edu-card">
+        <div class="edu-card reveal">
           <div class="deg">Undergraduate study</div>
           <h3>Bachelor's in Computer Science &amp; Engineering</h3>
           <p>Rajalakshmi Engineering College</p>
@@ -203,21 +244,21 @@
   </section>
 
   <!-- Contact -->
-  <section class="section alt" id="contact" aria-labelledby="contact-title">
+  <section class="section alt contact-section" id="contact" aria-labelledby="contact-title">
     <div class="container">
-      <p class="kicker">Contact</p>
-      <h2 id="contact-title">Let's build something useful</h2>
-      <p class="lede">Interested in AI/ML engineering, generative AI, and MLOps opportunities — let's talk about the problem you're solving.</p>
+      <p class="kicker reveal">Contact</p>
+      <h2 id="contact-title" class="reveal">Let's build something <span class="grad">useful</span></h2>
+      <p class="lede reveal">Interested in AI/ML engineering, generative AI, and MLOps opportunities — let's talk about the problem you're solving.</p>
       <div class="contact-grid">
-        <a class="contact-card" href="mailto:mudunuri.mskr@gmail.com">
+        <a class="contact-card reveal" href="mailto:mudunuri.mskr@gmail.com">
           <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></span>
           <span><span class="lbl">Email</span><br><span class="val">Email Sai ↗</span></span>
         </a>
-        <a class="contact-card" href="https://www.linkedin.com/in/sai-krishnam-raju-mudunuri-93438520a/">
+        <a class="contact-card reveal" href="https://www.linkedin.com/in/sai-krishnam-raju-mudunuri-93438520a/">
           <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span>
           <span><span class="lbl">LinkedIn</span><br><span class="val">LinkedIn ↗</span></span>
         </a>
-        <a class="contact-card" href="https://github.com/SaiMudunuri04">
+        <a class="contact-card reveal" href="https://github.com/SaiMudunuri04">
           <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55v-2.17c-3.2.7-3.87-1.36-3.87-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.72-1.54-2.55-.29-5.23-1.28-5.23-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.38-5.25 5.67.41.35.77 1.05.77 2.12v3.14c0 .3.21.67.8.55A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg></span>
           <span><span class="lbl">GitHub</span><br><span class="val">GitHub ↗</span></span>
         </a>
@@ -240,6 +281,14 @@
   var count = document.getElementById('result-count');
   var buttons = Array.prototype.slice.call(document.querySelectorAll('.filter-btn'));
 
+  var ACCENT = {
+    'Core ML': 'cyan',
+    'Generative AI': 'violet',
+    'Vision & Search': 'emerald',
+    'Agents': 'amber',
+    'Fine-tuning': 'rose'
+  };
+
   function esc(s) {
     return String(s).replace(/[&<>"']/g, function (c) {
       return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
@@ -247,17 +296,19 @@
   }
 
   function cardHTML(p, i) {
+    var accent = ACCENT[p.category] || 'cyan';
     var links = '';
     if (p.status === 'live') {
       links = '<div class="card-links">' +
-        '<a href="' + p.repo + '">Explore repository ↗</a>' +
-        '<a href="' + p.helm + '">Helm chart ↗</a></div>';
+        '<a class="card-link" href="' + p.repo + '"><span>Explore repository</span><span aria-hidden="true">↗</span></a>' +
+        '<a class="card-link card-link--helm" href="' + p.helm + '"><span>Helm chart</span><span aria-hidden="true">↗</span></a></div>';
     } else {
       links = '<span class="in-progress-badge">● In progress</span>';
     }
     var tags = p.tags.map(function (t) { return '<span class="tag">' + esc(t) + '</span>'; }).join('');
-    return '<article class="project-card" data-category="' + esc(p.category) + '">' +
-      '<div class="card-top"><span class="card-index">' + String(i + 1).padStart(2, '0') + ' / 10</span>' +
+    return '<article class="project-card accent-' + accent + '" data-category="' + esc(p.category) + '">' +
+      '<div class="card-glow" aria-hidden="true"></div>' +
+      '<div class="card-top"><span class="card-index">' + String(i + 1).padStart(2, '0') + ' / ' + PROJECTS.length + '</span>' +
       '<span class="card-cat">' + esc(p.category) + '</span></div>' +
       '<h3>' + esc(p.title) + '</h3>' +
       '<p class="desc">' + esc(p.summary) + '</p>' +
@@ -269,6 +320,7 @@
     var visible = PROJECTS.filter(function (p) { return filter === 'all' || p.category === filter; });
     grid.innerHTML = visible.map(function (p) { return cardHTML(p, PROJECTS.indexOf(p)); }).join('');
     count.textContent = 'Showing ' + visible.length + ' of ' + PROJECTS.length + ' projects — code, tests, and Helm chart for every shipped project.';
+    observeReveals();
   }
 
   buttons.forEach(function (btn) {
@@ -279,7 +331,7 @@
     });
   });
 
-  // Theme toggle (persisted)
+  // Theme toggle (persisted, default dark)
   var toggle = document.getElementById('theme-toggle');
   function applyTheme(t) {
     document.documentElement.setAttribute('data-theme', t);
@@ -288,12 +340,99 @@
   }
   var saved = null;
   try { saved = localStorage.getItem('sm-theme'); } catch (e) {}
-  applyTheme(saved || 'light');
+  applyTheme(saved || 'dark');
   toggle.addEventListener('click', function () {
     applyTheme(document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
   });
 
+  // Reveal-on-scroll
+  var revealIO = null;
+  function observeReveals() {
+    var els = document.querySelectorAll('.reveal:not(.in)');
+    if (!('IntersectionObserver' in window)) {
+      els.forEach(function (el) { el.classList.add('in'); });
+      return;
+    }
+    if (revealIO) revealIO.disconnect();
+    revealIO = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) { en.target.classList.add('in'); revealIO.unobserve(en.target); }
+      });
+    }, { threshold: 0.12 });
+    els.forEach(function (el) { revealIO.observe(el); });
+  }
+
+  // Neural-network canvas in the hero
+  (function initCanvas() {
+    var canvas = document.getElementById('net-canvas');
+    if (!canvas || !canvas.getContext) return;
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var ctx = canvas.getContext('2d');
+    var w = 0, h = 0, nodes = [], running = true, dpr = 1;
+
+    function resize() {
+      var r = canvas.parentElement.getBoundingClientRect();
+      dpr = Math.min(window.devicePixelRatio || 1, 2);
+      w = Math.max(1, Math.floor(r.width));
+      h = Math.max(1, Math.floor(r.height));
+      canvas.width = w * dpr;
+      canvas.height = h * dpr;
+      canvas.style.width = w + 'px';
+      canvas.style.height = h + 'px';
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      var n = Math.min(110, Math.floor(w * h / 16000));
+      nodes = [];
+      for (var i = 0; i < n; i++) {
+        nodes.push({
+          x: Math.random() * w, y: Math.random() * h,
+          vx: (Math.random() - 0.5) * 0.35, vy: (Math.random() - 0.5) * 0.35,
+          r: 1 + Math.random() * 1.6
+        });
+      }
+    }
+
+    function step() {
+      if (!running) return;
+      ctx.clearRect(0, 0, w, h);
+      var i, j, a, b, dx, dy, d;
+      for (i = 0; i < nodes.length; i++) {
+        a = nodes[i];
+        a.x += a.vx; a.y += a.vy;
+        if (a.x < 0 || a.x > w) a.vx *= -1;
+        if (a.y < 0 || a.y > h) a.vy *= -1;
+      }
+      ctx.lineWidth = 1;
+      for (i = 0; i < nodes.length; i++) {
+        for (j = i + 1; j < nodes.length; j++) {
+          a = nodes[i]; b = nodes[j];
+          dx = a.x - b.x; dy = a.y - b.y;
+          d = Math.sqrt(dx * dx + dy * dy);
+          if (d < 130) {
+            ctx.strokeStyle = 'rgba(56,189,248,' + (0.14 * (1 - d / 130)).toFixed(3) + ')';
+            ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
+          }
+        }
+      }
+      for (i = 0; i < nodes.length; i++) {
+        a = nodes[i];
+        ctx.fillStyle = 'rgba(167,139,250,0.55)';
+        ctx.beginPath(); ctx.arc(a.x, a.y, a.r, 0, 6.2832); ctx.fill();
+      }
+      requestAnimationFrame(step);
+    }
+
+    window.addEventListener('resize', resize);
+    document.addEventListener('visibilitychange', function () {
+      if (reduce) return;
+      running = !document.hidden;
+      if (running) requestAnimationFrame(step);
+    });
+    resize();
+    if (!reduce) requestAnimationFrame(step);
+  })();
+
   render('all');
+  observeReveals();
 })();
 </script>
 </body>
