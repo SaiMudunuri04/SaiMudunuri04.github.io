@@ -61,6 +61,8 @@
     </div>
   </header>
 
+  <div class="neural-divider" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
+
   <!-- Verified impact -->
   <section class="impact-band" id="impact" aria-labelledby="impact-title">
     <div class="container">
@@ -260,6 +262,8 @@
     </div>
   </section>
 
+  <div class="neural-divider" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
+
   <!-- Contact -->
   <section class="section alt contact-section" id="contact" aria-labelledby="contact-title">
     <div class="container">
@@ -361,6 +365,16 @@
     return '<span class="in-progress-badge">● In progress</span>';
   }
 
+  function pipeRail(p) {
+    var raw = p.pipeline.split('→').map(function (s) { return s.trim(); });
+    var items = [];
+    raw.forEach(function (s, k) {
+      if (k > 0) items.push('<li class="pipe-arrow" aria-hidden="true">→</li>');
+      items.push('<li class="pipe-step"><span class="pipe-node" aria-hidden="true"></span><span>' + esc(s) + '</span></li>');
+    });
+    return '<ol class="pipe-rail reveal" aria-label="Process: ' + esc(raw.join(' → ')) + '">' + items.join('') + '</ol>';
+  }
+
   function cardHTML(p, i, delay) {
     var accent = ACCENT[p.category] || 'cyan';
     var tags = p.tags.map(function (t) { return '<span class="tag">' + esc(t) + '</span>'; }).join('');
@@ -371,7 +385,7 @@
       '<span class="card-cat">' + esc(p.category) + '</span></div>' +
       '<h3>' + esc(p.title) + '</h3>' +
       '<p class="desc">' + esc(p.summary) + '</p>' +
-      '<div class="pipeline mono">' + esc(p.pipeline) + '</div>' +
+      pipeRail(p) +
       '<div class="tag-row">' + tags + '</div>' + linkRow(p) + '</article>';
   }
 
@@ -394,6 +408,7 @@
       '<div class="tag-row">' + tags + '</div>' + linkRow(p) + '</div>' +
       '<div class="show-panel">' +
       '<div class="show-panel-head mono">' + esc(p.name) + '</div>' +
+      '<div class="show-rail-label mono">end-to-end pipeline</div>' +
       '<ol class="show-steps">' + stepsHTML + '</ol>' +
       '<div class="show-panel-foot mono">code · tests · helm · docs</div>' +
       '</div></article>';
