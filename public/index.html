@@ -13,6 +13,8 @@
 <body>
 <a class="skip-link" href="#main">Skip to main content</a>
 <div id="scroll-progress" aria-hidden="true"></div>
+<div class="stars" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
 
 <nav class="site-nav" aria-label="Primary">
   <div class="container nav-inner">
@@ -32,29 +34,25 @@
 </nav>
 
 <main id="main">
-  <!-- Hero -->
+  <!-- Hero : real-time 3D particle neural cosmos (Three.js) with 2D fallback -->
   <header class="hero">
+    <canvas id="webgl-canvas" aria-hidden="true"></canvas>
     <canvas id="net-canvas" aria-hidden="true"></canvas>
-    <div class="hero-grid" aria-hidden="true"></div>
-    <div class="hero-orbs" aria-hidden="true">
-      <span class="orb orb-a"></span>
-      <span class="orb orb-b"></span>
-      <span class="orb orb-c"></span>
-    </div>
+    <div class="hero-nebula" aria-hidden="true"></div>
     <div class="hero-vignette" aria-hidden="true"></div>
     <div id="cursor-glow" aria-hidden="true"></div>
     <div class="container hero-inner">
-      <span class="eyebrow"><span class="dot" aria-hidden="true"></span>Open to AI/ML engineering opportunities</span>
-      <h1>Sai Krishnam Raju <span class="grad shine">Mudunuri</span></h1>
-      <p class="role-line"><strong>AI/ML Engineer</strong> — Core ML, Deep Learning, GenAI, RAG &amp; AI Agents</p>
-      <p class="hero-sub">I build the systems around a model: the data boundary, evaluation, serving path, and the way it is operated.</p>
-      <div class="hero-ctas">
+      <span class="eyebrow reveal-hero"><span class="dot" aria-hidden="true"></span>Open to AI/ML engineering opportunities</span>
+      <h1 class="hero-title" data-split>Sai Krishnam Raju <span class="grad shine">Mudunuri</span></h1>
+      <p class="role-line reveal-hero"><strong>AI/ML Engineer</strong> — Core ML, Deep Learning, GenAI, RAG &amp; AI Agents</p>
+      <p class="hero-sub reveal-hero">I build the systems around a model: the data boundary, evaluation, serving path, and the way it is operated.</p>
+      <div class="hero-ctas reveal-hero">
         <a class="btn btn-primary magnetic" href="#projects">Explore projects ↗</a>
         <a class="btn btn-ghost magnetic" href="resume.pdf">Download resume ↓</a>
       </div>
-      <div class="telemetry" aria-hidden="true"><span class="t-prompt">$</span><span id="telemetry-line">build ············ passing</span><span class="t-caret">▍</span></div>
-      <p class="proof-strip reveal">10 inspectable repositories — code, tests, and deployment configs</p>
-      <div class="hero-meta">
+      <div class="telemetry reveal-hero" aria-hidden="true"><span class="t-prompt">$</span><span id="telemetry-line">build ············ passing</span><span class="t-caret">▍</span></div>
+      <p class="proof-strip reveal-hero">10 inspectable repositories — code, tests, and deployment configs</p>
+      <div class="hero-meta reveal-hero">
         <span>📍 Atlanta, Georgia</span>
         <span>💼 Honeywell · AI/ML Engineer</span>
         <span>🎓 M.S. Information Systems Technology</span>
@@ -67,30 +65,30 @@
   <section class="impact-band" id="impact" aria-labelledby="impact-title">
     <div class="container">
       <p class="kicker reveal">Verified impact</p>
-      <h2 id="impact-title" class="reveal">Measured outcomes, not adjectives</h2>
+      <h2 id="impact-title" class="section-title split-obs" data-split>Measured outcomes, not adjectives</h2>
       <p class="lede reveal">Measured outcomes from professional experience — the numbers behind the work.</p>
       <div class="impact-grid" role="list" aria-label="Measured outcomes">
-        <div class="impact-card reveal" role="listitem">
+        <div class="impact-card glass reveal" role="listitem">
           <div class="num grad-text" data-count="30" data-suffix="%">0%</div>
           <div class="lbl">lower inference cost</div>
           <div class="sub">through complexity-aware routing</div>
         </div>
-        <div class="impact-card reveal" role="listitem">
+        <div class="impact-card glass reveal" role="listitem">
           <div class="num grad-text" data-count="60" data-suffix="%">0%</div>
           <div class="lbl">less manual chart review</div>
           <div class="sub">with ClinicalBERT extraction</div>
         </div>
-        <div class="impact-card reveal" role="listitem">
+        <div class="impact-card glass reveal" role="listitem">
           <div class="num grad-text" data-count="50" data-suffix="%">0%</div>
           <div class="lbl">faster model deployment</div>
           <div class="sub">through automated delivery</div>
         </div>
-        <div class="impact-card reveal" role="listitem">
+        <div class="impact-card glass reveal" role="listitem">
           <div class="num grad-text" data-count="30" data-suffix="%">0%</div>
           <div class="lbl">fewer model-quality incidents</div>
           <div class="sub">with drift monitoring</div>
         </div>
-        <div class="impact-card reveal" role="listitem">
+        <div class="impact-card glass reveal" role="listitem">
           <div class="num grad-text" data-count="15" data-suffix="M+">0M+</div>
           <div class="lbl">clinical records</div>
           <div class="sub">transformed into risk features</div>
@@ -112,7 +110,7 @@
   <section class="section" id="projects" aria-labelledby="projects-title">
     <div class="container">
       <p class="kicker reveal">Selected work</p>
-      <h2 id="projects-title" class="reveal">Systems you can <span class="grad">inspect</span></h2>
+      <h2 id="projects-title" class="section-title split-obs" data-split>Systems you can <span class="grad">inspect</span></h2>
       <p class="lede reveal">Ten independent engineering repositories spanning core ML, retrieval, vision, agent workflows, and fine-tuning. Every project ships code, tests, deployment configuration, and documentation — designed to be read, run, and reviewed.</p>
       <div class="filters reveal" role="group" aria-label="Filter projects by category">
         <button class="filter-btn" type="button" data-filter="all" aria-pressed="true">All</button>
@@ -134,11 +132,11 @@
   <section class="section alt" id="experience" aria-labelledby="experience-title">
     <div class="container">
       <p class="kicker reveal">Experience</p>
-      <h2 id="experience-title" class="reveal">The work behind <span class="grad">the work</span></h2>
+      <h2 id="experience-title" class="section-title split-obs" data-split>The work behind <span class="grad">the work</span></h2>
       <p class="lede reveal">Professional experience informs how these independent projects are built — the same care for evaluation, serving, and operations.</p>
       <ol class="timeline">
         <li class="timeline-item reveal">
-          <article class="job-card">
+          <article class="job-card glass">
             <div class="job-head">
               <div>
                 <h3>AI/ML Engineer</h3>
@@ -158,7 +156,7 @@
           </article>
         </li>
         <li class="timeline-item reveal">
-          <article class="job-card">
+          <article class="job-card glass">
             <div class="job-head">
               <div>
                 <h3>ML Engineer</h3>
@@ -184,20 +182,20 @@
   <section class="section" id="approach" aria-labelledby="approach-title">
     <div class="container">
       <p class="kicker reveal">Approach</p>
-      <h2 id="approach-title" class="reveal">Good models need <span class="grad">good systems</span></h2>
+      <h2 id="approach-title" class="section-title split-obs" data-split>Good models need <span class="grad">good systems</span></h2>
       <p class="lede reveal">My work connects model behavior to dependable software — how a system fails, what evidence it returns, and whether another engineer can understand it later.</p>
       <div class="steps">
-        <div class="step reveal">
+        <div class="step glass reveal">
           <div class="step-num">01</div>
           <h3>Define</h3>
           <p>Start at the boundary. Explicit inputs, data validation, and leakage-aware evaluation create a trustworthy baseline before complexity grows.</p>
         </div>
-        <div class="step reveal">
+        <div class="step glass reveal">
           <div class="step-num">02</div>
           <h3>Build</h3>
           <p>Make decisions visible. Documented architecture, inspectable code, and tests reveal why a model or retrieval system behaves as it does.</p>
         </div>
-        <div class="step reveal">
+        <div class="step glass reveal">
           <div class="step-num">03</div>
           <h3>Operate</h3>
           <p>Design for the handoff. Health endpoints, deployment configuration, observability, and runbooks make the next step clear when things go wrong.</p>
@@ -210,30 +208,30 @@
   <section class="section alt" id="skills" aria-labelledby="skills-title">
     <div class="container">
       <p class="kicker reveal">Toolkit</p>
-      <h2 id="skills-title" class="reveal">A focused <span class="grad">engineering toolkit</span></h2>
+      <h2 id="skills-title" class="section-title split-obs" data-split>A focused <span class="grad">engineering toolkit</span></h2>
       <p class="lede reveal">Skills grouped around the work recruiters can inspect: modeling, retrieval, cloud delivery, and the operational systems that make AI useful.</p>
       <div class="skill-groups">
-        <div class="skill-group reveal">
+        <div class="skill-group glass reveal">
           <h3><span class="sg-dot" style="--dot:#38bdf8" aria-hidden="true"></span>Modeling</h3><div class="sub">ML &amp; data</div>
           <p class="items">Python · SQL · PyTorch · TensorFlow · scikit-learn · XGBoost · LightGBM · Pandas · NumPy · PySpark · SHAP · Feature engineering · Model evaluation · Hyperparameter tuning · Optuna · ClinicalBERT</p>
         </div>
-        <div class="skill-group reveal">
+        <div class="skill-group glass reveal">
           <h3><span class="sg-dot" style="--dot:#a78bfa" aria-hidden="true"></span>Intelligence</h3><div class="sub">Generative AI &amp; NLP</div>
           <p class="items">Amazon Bedrock · Hugging Face Transformers · LangChain · LangGraph · LlamaIndex · RAG · MCP · FastMCP · vLLM · AI agents · Prompt engineering · LoRA · QLoRA · PEFT · Mistral · LLaMA · Claude · Titan embeddings</p>
         </div>
-        <div class="skill-group reveal">
+        <div class="skill-group glass reveal">
           <h3><span class="sg-dot" style="--dot:#34d399" aria-hidden="true"></span>Retrieval</h3><div class="sub">Vector search &amp; retrieval</div>
           <p class="items">Amazon OpenSearch · FAISS · BM25 · Pinecone · Redis · Embeddings · Hybrid search · Metadata filtering · Reranking</p>
         </div>
-        <div class="skill-group reveal">
+        <div class="skill-group glass reveal">
           <h3><span class="sg-dot" style="--dot:#fbbf24" aria-hidden="true"></span>Cloud</h3><div class="sub">AWS &amp; inference APIs</div>
           <p class="items">EC2 · S3 · ECR · EKS · Lambda · API Gateway · SageMaker · SageMaker Pipelines · Model Registry · VPC · IAM · FastAPI · REST APIs</p>
         </div>
-        <div class="skill-group reveal">
+        <div class="skill-group glass reveal">
           <h3><span class="sg-dot" style="--dot:#f472b6" aria-hidden="true"></span>Delivery</h3><div class="sub">Delivery &amp; MLOps</div>
           <p class="items">Linux · Git · Docker · Kubernetes · Terraform · Helm · Argo CD · CI/CD · MLflow · DVC · Model versioning · Canary releases</p>
         </div>
-        <div class="skill-group reveal">
+        <div class="skill-group glass reveal">
           <h3><span class="sg-dot" style="--dot:#22d3ee" aria-hidden="true"></span>Operate</h3><div class="sub">Observability &amp; pipelines</div>
           <p class="items">Prometheus · Grafana · CloudWatch · Latency tracing · ETL · Batch processing · Data quality · S3 data lakes</p>
         </div>
@@ -245,15 +243,15 @@
   <section class="section" id="education" aria-labelledby="education-title">
     <div class="container">
       <p class="kicker reveal">Foundation</p>
-      <h2 id="education-title" class="reveal">Education &amp; <span class="grad">credentials</span></h2>
+      <h2 id="education-title" class="section-title split-obs" data-split>Education &amp; <span class="grad">credentials</span></h2>
       <p class="lede reveal">Formal study, hands-on engineering, and continued practice across model development and software delivery.</p>
       <div class="edu-grid">
-        <div class="edu-card reveal">
+        <div class="edu-card glass reveal">
           <div class="deg">Graduate study</div>
           <h3>Master's in Information Systems Technology</h3>
           <p>Wilmington University</p>
         </div>
-        <div class="edu-card reveal">
+        <div class="edu-card glass reveal">
           <div class="deg">Undergraduate study</div>
           <h3>Bachelor's in Computer Science &amp; Engineering</h3>
           <p>Rajalakshmi Engineering College</p>
@@ -266,18 +264,18 @@
   <section class="section alt contact-section" id="contact" aria-labelledby="contact-title">
     <div class="container">
       <p class="kicker reveal">Contact</p>
-      <h2 id="contact-title" class="reveal">Let's build something <span class="grad">useful</span></h2>
+      <h2 id="contact-title" class="section-title split-obs" data-split>Let's build something <span class="grad">useful</span></h2>
       <p class="lede reveal">Interested in AI/ML engineering, generative AI, and MLOps opportunities — let's talk about the problem you're solving.</p>
       <div class="contact-grid">
-        <a class="contact-card reveal" href="mailto:mudunuri.mskr@gmail.com">
+        <a class="contact-card glass reveal" href="mailto:mudunuri.mskr@gmail.com">
           <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></span>
           <span><span class="lbl">Email</span><br><span class="val">Email Sai ↗</span></span>
         </a>
-        <a class="contact-card reveal" href="https://www.linkedin.com/in/sai-krishnam-raju-mudunuri-93438520a/">
+        <a class="contact-card glass reveal" href="https://www.linkedin.com/in/sai-krishnam-raju-mudunuri-93438520a/">
           <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span>
           <span><span class="lbl">LinkedIn</span><br><span class="val">LinkedIn ↗</span></span>
         </a>
-        <a class="contact-card reveal" href="https://github.com/SaiMudunuri04">
+        <a class="contact-card glass reveal" href="https://github.com/SaiMudunuri04">
           <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55v-2.17c-3.2.7-3.87-1.36-3.87-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.72-1.54-2.55-.29-5.23-1.28-5.23-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.38-5.25 5.67.41.35.77 1.05.77 2.12v3.14c0 .3.21.67.8.55A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg></span>
           <span><span class="lbl">GitHub</span><br><span class="val">GitHub ↗</span></span>
         </a>
@@ -293,6 +291,7 @@
   </div>
 </footer>
 
+<script src="https://unpkg.com/three@0.149.0/build/three.min.js"></script>
 <script src="projects.js"></script>
 <script>
 (function () {
@@ -300,6 +299,41 @@
   var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var finePointer = window.matchMedia && window.matchMedia('(pointer: fine)').matches;
 
+  /* ---------- Character-split headings (staggered reveal) ---------- */
+  function splitChars(el) {
+    var idx = 0;
+    var label = el.textContent.replace(/\s+/g, ' ').trim();
+    if (label) el.setAttribute('aria-label', label);
+    function walk(node) {
+      var kids = Array.prototype.slice.call(node.childNodes);
+      kids.forEach(function (kid) {
+        if (kid.nodeType === 3) {
+          var frag = document.createDocumentFragment();
+          kid.textContent.split('').forEach(function (ch) {
+            if (ch === ' ' || ch === '\n' || ch === '\t') {
+              frag.appendChild(document.createTextNode(' '));
+            } else {
+              var s = document.createElement('span');
+              s.className = 'ch';
+              s.setAttribute('aria-hidden', 'true');
+              s.style.setProperty('--i', idx++);
+              s.textContent = ch;
+              frag.appendChild(s);
+            }
+          });
+          node.replaceChild(frag, kid);
+        } else if (kid.nodeType === 1) {
+          walk(kid);
+        }
+      });
+    }
+    walk(el);
+  }
+  if (!reduceMotion) {
+    Array.prototype.forEach.call(document.querySelectorAll('[data-split]'), splitChars);
+  }
+
+  /* ---------- Project cards (data-driven, untouched projects.js) ---------- */
   var grid = document.getElementById('project-grid');
   var count = document.getElementById('result-count');
   var buttons = Array.prototype.slice.call(document.querySelectorAll('.filter-btn'));
@@ -330,14 +364,14 @@
   function cardHTML(p, i, delay) {
     var accent = ACCENT[p.category] || 'cyan';
     var tags = p.tags.map(function (t) { return '<span class="tag">' + esc(t) + '</span>'; }).join('');
-    return '<article class="project-card tilt accent-' + accent + '" data-category="' + esc(p.category) + '"' +
+    return '<article class="project-card glass tilt accent-' + accent + '" data-category="' + esc(p.category) + '"' +
       (delay ? ' style="transition-delay:' + delay + 'ms"' : '') + '>' +
-      '<div class="card-glow" aria-hidden="true"></div>' +
+      '<div class="card-glare" aria-hidden="true"></div>' +
       '<div class="card-top"><span class="card-index">' + String(i + 1).padStart(2, '0') + ' / ' + PROJECTS.length + '</span>' +
       '<span class="card-cat">' + esc(p.category) + '</span></div>' +
       '<h3>' + esc(p.title) + '</h3>' +
       '<p class="desc">' + esc(p.summary) + '</p>' +
-      '<div class="pipeline">' + esc(p.pipeline) + '</div>' +
+      '<div class="pipeline mono">' + esc(p.pipeline) + '</div>' +
       '<div class="tag-row">' + tags + '</div>' + linkRow(p) + '</article>';
   }
 
@@ -346,11 +380,11 @@
     var tags = p.tags.map(function (t) { return '<span class="tag">' + esc(t) + '</span>'; }).join('');
     var steps = p.pipeline.split('→').map(function (s) { return esc(s.trim()); });
     var stepsHTML = steps.map(function (s, k) {
-      return '<li class="show-step"><span class="show-step-num">' + (k + 1) + '</span><span>' + s + '</span></li>' +
-        (k < steps.length - 1 ? '<li class="show-arrow" aria-hidden="true">↓</li>' : '');
+      return '<li class="show-step"><span class="show-step-num">' + (k + 1) + '</span>' +
+        '<span class="show-step-body"><span class="show-step-name">' + s + '</span></span></li>';
     }).join('');
-    return '<article class="project-card tilt project-showcase accent-' + accent + '" data-category="' + esc(p.category) + '">' +
-      '<div class="card-glow" aria-hidden="true"></div>' +
+    return '<article class="project-card glass tilt project-showcase accent-' + accent + '" data-category="' + esc(p.category) + '">' +
+      '<div class="card-glare" aria-hidden="true"></div>' +
       '<div class="show-main">' +
       '<div class="show-flag"><span class="show-star" aria-hidden="true">★</span> Featured build</div>' +
       '<div class="card-top"><span class="card-index">01 / ' + PROJECTS.length + '</span>' +
@@ -359,9 +393,9 @@
       '<p class="desc">' + esc(p.summary) + '</p>' +
       '<div class="tag-row">' + tags + '</div>' + linkRow(p) + '</div>' +
       '<div class="show-panel">' +
-      '<div class="show-panel-head">' + esc(p.name) + '</div>' +
+      '<div class="show-panel-head mono">' + esc(p.name) + '</div>' +
       '<ol class="show-steps">' + stepsHTML + '</ol>' +
-      '<div class="show-panel-foot">code · tests · helm · docs</div>' +
+      '<div class="show-panel-foot mono">code · tests · helm · docs</div>' +
       '</div></article>';
   }
 
@@ -386,12 +420,13 @@
     });
   });
 
-  // Theme toggle (persisted, default dark)
+  /* ---------- Theme toggle (persisted, default dark) ---------- */
   var toggle = document.getElementById('theme-toggle');
   function applyTheme(t) {
     document.documentElement.setAttribute('data-theme', t);
     toggle.textContent = t === 'dark' ? '☀' : '☾';
     try { localStorage.setItem('sm-theme', t); } catch (e) {}
+    if (window.__syncThreeTheme) window.__syncThreeTheme(t);
   }
   var saved = null;
   try { saved = localStorage.getItem('sm-theme'); } catch (e) {}
@@ -400,7 +435,7 @@
     applyTheme(document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
   });
 
-  // Reveal-on-scroll (with stagger support via inline transition-delay)
+  /* ---------- Reveal-on-scroll (wipe + rise variants) ---------- */
   var revealIO = null;
   function observeReveals() {
     var els = document.querySelectorAll('.reveal:not(.in)');
@@ -417,7 +452,22 @@
     els.forEach(function (el) { revealIO.observe(el); });
   }
 
-  // Count-up numbers in the impact band
+  /* Split character headings : reveal on scroll (hero handled by body.loaded) */
+  function observeSplitHeadings() {
+    var heads = document.querySelectorAll('.split-obs');
+    if (!('IntersectionObserver' in window)) {
+      Array.prototype.forEach.call(heads, function (h) { h.classList.add('in'); });
+      return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
+      });
+    }, { threshold: 0.25 });
+    Array.prototype.forEach.call(heads, function (h) { io.observe(h); });
+  }
+
+  /* ---------- Count-up numbers in the impact band ---------- */
   (function countUp() {
     var nums = document.querySelectorAll('.impact-card .num[data-count]');
     function setFinal(el) {
@@ -434,7 +484,7 @@
         io.unobserve(el);
         var target = parseInt(el.getAttribute('data-count'), 10);
         var suffix = el.getAttribute('data-suffix');
-        var t0 = null, dur = 1300;
+        var t0 = null, dur = 1400;
         function frame(t) {
           if (t0 === null) t0 = t;
           var k = Math.min(1, (t - t0) / dur);
@@ -448,7 +498,7 @@
     nums.forEach(function (el) { io.observe(el); });
   })();
 
-  // Telemetry status cycler (decorative system motif)
+  /* ---------- Telemetry status cycler (decorative system motif, metric-free) ---------- */
   (function telemetry() {
     var line = document.getElementById('telemetry-line');
     if (!line) return;
@@ -470,24 +520,30 @@
     }, 2600);
   })();
 
-  // Subtle 3D tilt on project cards
+  /* ---------- 3D tilt + glare on project cards ---------- */
   function initTilt() {
     if (reduceMotion || !finePointer) return;
     var cards = document.querySelectorAll('.project-card.tilt');
     cards.forEach(function (card) {
+      var glare = card.querySelector('.card-glare');
       card.addEventListener('mousemove', function (e) {
         var r = card.getBoundingClientRect();
         var px = (e.clientX - r.left) / r.width - 0.5;
         var py = (e.clientY - r.top) / r.height - 0.5;
-        card.style.transform = 'perspective(900px) rotateX(' + (-py * 5).toFixed(2) + 'deg) rotateY(' + (px * 6).toFixed(2) + 'deg) translateY(-6px)';
+        card.style.transform = 'perspective(1100px) rotateX(' + (-py * 7).toFixed(2) + 'deg) rotateY(' + (px * 9).toFixed(2) + 'deg) translateY(-8px)';
+        if (glare) {
+          glare.style.opacity = '1';
+          glare.style.background = 'radial-gradient(circle at ' + ((px + 0.5) * 100).toFixed(1) + '% ' + ((py + 0.5) * 100).toFixed(1) + '%, rgba(255,255,255,.14), transparent 55%)';
+        }
       });
       card.addEventListener('mouseleave', function () {
         card.style.transform = '';
+        if (glare) glare.style.opacity = '0';
       });
     });
   }
 
-  // Magnetic CTA buttons
+  /* ---------- Magnetic CTA buttons ---------- */
   (function magnetic() {
     if (reduceMotion || !finePointer) return;
     var btns = document.querySelectorAll('.magnetic');
@@ -496,13 +552,13 @@
         var r = btn.getBoundingClientRect();
         var dx = e.clientX - (r.left + r.width / 2);
         var dy = e.clientY - (r.top + r.height / 2);
-        btn.style.transform = 'translate(' + (dx * 0.12).toFixed(1) + 'px,' + (dy * 0.18).toFixed(1) + 'px)';
+        btn.style.transform = 'translate(' + (dx * 0.14).toFixed(1) + 'px,' + (dy * 0.2).toFixed(1) + 'px)';
       });
       btn.addEventListener('mouseleave', function () { btn.style.transform = ''; });
     });
   })();
 
-  // Cursor-following ambient glow inside the hero
+  /* ---------- Cursor-following ambient glow inside the hero ---------- */
   (function cursorGlow() {
     var glow = document.getElementById('cursor-glow');
     var hero = document.querySelector('.hero');
@@ -525,7 +581,7 @@
     hero.addEventListener('mouseenter', function () { glow.style.opacity = '1'; });
   })();
 
-  // Active nav highlighting
+  /* ---------- Active nav highlighting ---------- */
   (function activeNav() {
     var links = Array.prototype.slice.call(document.querySelectorAll('.nav-links a'));
     var map = {};
@@ -547,21 +603,22 @@
     });
   })();
 
-  // Scroll progress bar + hero parallax (single rAF-throttled listener)
+  /* ---------- Shared scroll state (progress bar + camera dolly) ---------- */
+  var scrollState = { y: 0, heroK: 0 };
+  window.__heroScroll = scrollState;
   (function scrollFX() {
     var bar = document.getElementById('scroll-progress');
     var hero = document.querySelector('.hero');
-    var orbs = document.querySelector('.hero-orbs');
-    var canvas = document.getElementById('net-canvas');
     var ticking = false;
     function update() {
       ticking = false;
       var y = window.scrollY || window.pageYOffset;
       var max = document.documentElement.scrollHeight - window.innerHeight;
       if (bar && max > 0) bar.style.transform = 'scaleX(' + (y / max).toFixed(4) + ')';
-      if (!reduceMotion && hero && y < hero.offsetHeight * 1.2) {
-        if (orbs) orbs.style.transform = 'translateY(' + (y * 0.18).toFixed(1) + 'px)';
-        if (canvas) canvas.style.transform = 'translateY(' + (y * 0.08).toFixed(1) + 'px)';
+      scrollState.y = y;
+      if (hero) {
+        var h = hero.offsetHeight || 1;
+        scrollState.heroK = Math.max(0, Math.min(1, y / h));
       }
     }
     window.addEventListener('scroll', function () {
@@ -570,9 +627,210 @@
     update();
   })();
 
-  // Neural-network canvas in the hero
-  (function initCanvas() {
+  /* ---------- WebGL availability probe ---------- */
+  function webglOK() {
+    try {
+      var c = document.createElement('canvas');
+      return !!(window.WebGLRenderingContext && (c.getContext('webgl') || c.getContext('experimental-webgl')));
+    } catch (e) { return false; }
+  }
+
+  /* ---------- 3D hero : particle neural cosmos (Three.js r149) ---------- */
+  var threeAPI = null;
+  var linksMat = null;
+  function initThree() {
+    var canvas = document.getElementById('webgl-canvas');
+    var hero = document.querySelector('.hero');
+    var renderer;
+    try {
+      renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true, powerPreference: 'high-performance' });
+    } catch (e) { return false; }
+
+    var isSmall = Math.min(window.innerWidth || 0, window.innerHeight || 0) < 640;
+    var N_CORE = isSmall ? 1300 : 2400;
+    var N_SHELL = isSmall ? 450 : 950;
+    var N_RING = isSmall ? 320 : 680;
+
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.75));
+    var scene = new THREE.Scene();
+    scene.fog = new THREE.FogExp2(0x05070f, 0.05);
+    var camera = new THREE.PerspectiveCamera(55, 1, 0.1, 120);
+    camera.position.set(0, 0.5, 8.2);
+
+    function fibSphere(n, r) {
+      var pos = new Float32Array(n * 3);
+      var golden = Math.PI * (3 - Math.sqrt(5));
+      for (var i = 0; i < n; i++) {
+        var y = 1 - (i / (n - 1)) * 2;
+        var rad = Math.sqrt(1 - y * y);
+        var th = golden * i;
+        pos[i * 3] = Math.cos(th) * rad * r;
+        pos[i * 3 + 1] = y * r;
+        pos[i * 3 + 2] = Math.sin(th) * rad * r;
+      }
+      return pos;
+    }
+
+    var world = new THREE.Group();
+    scene.add(world);
+
+    /* Core : breathing particle lattice */
+    var coreBase = fibSphere(N_CORE, 2.15);
+    var coreGeo = new THREE.BufferGeometry();
+    coreGeo.setAttribute('position', new THREE.BufferAttribute(coreBase.slice(), 3));
+    var coreMat = new THREE.PointsMaterial({ color: 0x67e8f9, size: 0.045, transparent: true, opacity: 0.9, blending: THREE.AdditiveBlending, depthWrite: false, sizeAttenuation: true });
+    var core = new THREE.Points(coreGeo, coreMat);
+    world.add(core);
+
+    /* Neural links between nearby core particles (computed once) */
+    (function buildLinks() {
+      var maxSeg = isSmall ? 380 : 750;
+      var arr = new Float32Array(maxSeg * 6);
+      var n = 0;
+      var thr2 = 0.55 * 0.55;
+      outer:
+      for (var i = 0; i < N_CORE && n < maxSeg; i += 2) {
+        var ix = i * 3;
+        for (var j = i + 1; j < N_CORE && n < maxSeg; j += 4) {
+          var jx = j * 3;
+          var dx = coreBase[ix] - coreBase[jx], dy = coreBase[ix + 1] - coreBase[jx + 1], dz = coreBase[ix + 2] - coreBase[jx + 2];
+          if (dx * dx + dy * dy + dz * dz < thr2) {
+            arr[n * 6] = coreBase[ix]; arr[n * 6 + 1] = coreBase[ix + 1]; arr[n * 6 + 2] = coreBase[ix + 2];
+            arr[n * 6 + 3] = coreBase[jx]; arr[n * 6 + 4] = coreBase[jx + 1]; arr[n * 6 + 5] = coreBase[jx + 2];
+            n++;
+            if (n >= maxSeg) break outer;
+          }
+        }
+      }
+      var g = new THREE.BufferGeometry();
+      g.setAttribute('position', new THREE.BufferAttribute(arr.subarray(0, n * 6), 3));
+      var m = new THREE.LineBasicMaterial({ color: 0x38bdf8, transparent: true, opacity: 0.16, blending: THREE.AdditiveBlending, depthWrite: false });
+      var lines = new THREE.LineSegments(g, m);
+      lines.name = 'links';
+      world.add(lines);
+      linksMat = m;
+    })();
+
+    /* Shell : outer violet haze, counter-rotating */
+    var shellGeo = new THREE.BufferGeometry();
+    shellGeo.setAttribute('position', new THREE.BufferAttribute(fibSphere(N_SHELL, 3.55), 3));
+    var shellMat = new THREE.PointsMaterial({ color: 0xa78bfa, size: 0.05, transparent: true, opacity: 0.55, blending: THREE.AdditiveBlending, depthWrite: false });
+    var shell = new THREE.Points(shellGeo, shellMat);
+    world.add(shell);
+
+    /* Ring : tilted emerald orbit */
+    var ringGeo = new THREE.BufferGeometry();
+    (function buildRing() {
+      var pos = new Float32Array(N_RING * 3);
+      var R = 4.7, tube = 0.5;
+      for (var i = 0; i < N_RING; i++) {
+        var a = (i / N_RING) * Math.PI * 2;
+        var rr = R + (Math.random() - 0.5) * tube * 2;
+        pos[i * 3] = Math.cos(a) * rr;
+        pos[i * 3 + 1] = (Math.random() - 0.5) * tube * 2;
+        pos[i * 3 + 2] = Math.sin(a) * rr;
+      }
+      ringGeo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+    })();
+    var ringMat = new THREE.PointsMaterial({ color: 0x34d399, size: 0.04, transparent: true, opacity: 0.7, blending: THREE.AdditiveBlending, depthWrite: false });
+    var ring = new THREE.Points(ringGeo, ringMat);
+    ring.rotation.x = 1.15;
+    ring.rotation.z = 0.25;
+    world.add(ring);
+
+    world.position.x = 2.4;
+    world.rotation.z = 0.12;
+
+    /* Mouse parallax targets */
+    var mx = 0, my = 0, tmx = 0, tmy = 0;
+    if (finePointer) {
+      hero.addEventListener('mousemove', function (e) {
+        var r = hero.getBoundingClientRect();
+        tmx = ((e.clientX - r.left) / r.width - 0.5) * 2;
+        tmy = ((e.clientY - r.top) / r.height - 0.5) * 2;
+      });
+      hero.addEventListener('mouseleave', function () { tmx = 0; tmy = 0; });
+    }
+
+    function resize() {
+      var r = hero.getBoundingClientRect();
+      var w = Math.max(1, Math.floor(r.width)), h = Math.max(1, Math.floor(r.height));
+      renderer.setSize(w, h, false);
+      camera.aspect = w / h;
+      camera.updateProjectionMatrix();
+    }
+    window.addEventListener('resize', resize);
+    resize();
+
+    var heroVisible = true;
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (entries) {
+        heroVisible = entries[0].isIntersecting;
+      }, { threshold: 0 }).observe(hero);
+    }
+    var running = true;
+    document.addEventListener('visibilitychange', function () {
+      running = !document.hidden;
+      if (running) requestAnimationFrame(tick);
+    });
+
+    var corePos = coreGeo.attributes.position;
+    var t = Math.random() * 100;
+    function tick() {
+      if (!running) return;
+      if (heroVisible && !document.hidden) {
+        t += 0.008;
+        /* breathe : cheap layered-sine displacement along the normal */
+        for (var i = 0; i < N_CORE; i++) {
+          var ix = i * 3;
+          var bx = coreBase[ix], by = coreBase[ix + 1], bz = coreBase[ix + 2];
+          var wob = 1 + 0.055 * Math.sin(t * 1.4 + by * 2.2) * Math.sin(t * 0.9 + bx * 1.6 + bz * 1.1);
+          corePos.array[ix] = bx * wob;
+          corePos.array[ix + 1] = by * wob;
+          corePos.array[ix + 2] = bz * wob;
+        }
+        corePos.needsUpdate = true;
+        world.rotation.y += 0.0016;
+        shell.rotation.y -= 0.0009;
+        shell.rotation.x += 0.0004;
+        ring.rotation.z += 0.0011;
+        mx += (tmx - mx) * 0.045;
+        my += (tmy - my) * 0.045;
+        world.rotation.x = my * 0.22;
+        world.rotation.y += mx * 0.0012;
+        var k = scrollState.heroK;
+        camera.position.z = 8.2 + k * 3.4;
+        camera.position.y = 0.5 - k * 1.6;
+        world.position.y = k * 2.2;
+        world.position.x = 2.4 - k * 1.2;
+        camera.lookAt(world.position.x * 0.4, 0, 0);
+        renderer.render(scene, camera);
+      }
+      requestAnimationFrame(tick);
+    }
+
+    threeAPI = {
+      setTheme: function (theme) {
+        var light = theme === 'light';
+        coreMat.color.setHex(light ? 0x0284c7 : 0x67e8f9);
+        coreMat.opacity = light ? 0.75 : 0.9;
+        linksMat.color.setHex(light ? 0x0369a1 : 0x38bdf8);
+        linksMat.opacity = light ? 0.22 : 0.16;
+        shellMat.color.setHex(light ? 0x7c3aed : 0xa78bfa);
+        shellMat.opacity = light ? 0.4 : 0.55;
+        ringMat.color.setHex(light ? 0x059669 : 0x34d399);
+      }
+    };
+    window.__syncThreeTheme = function (t) { if (threeAPI) threeAPI.setTheme(t); };
+    threeAPI.setTheme(document.documentElement.getAttribute('data-theme') || 'dark');
+    requestAnimationFrame(tick);
+    return true;
+  }
+
+  /* ---------- 2D fallback : classic neural net (also used static under reduced motion) ---------- */
+  function initCanvas2D(animated) {
     var canvas = document.getElementById('net-canvas');
+    canvas.classList.add('on');
     if (!canvas || !canvas.getContext) return;
     var ctx = canvas.getContext('2d');
     var w = 0, h = 0, nodes = [], running = true, dpr = 1;
@@ -598,16 +856,9 @@
       }
     }
 
-    function step() {
-      if (!running) return;
+    function draw() {
       ctx.clearRect(0, 0, w, h);
       var i, j, a, b, dx, dy, d;
-      for (i = 0; i < nodes.length; i++) {
-        a = nodes[i];
-        a.x += a.vx; a.y += a.vy;
-        if (a.x < 0 || a.x > w) a.vx *= -1;
-        if (a.y < 0 || a.y > h) a.vy *= -1;
-      }
       ctx.lineWidth = 1;
       for (i = 0; i < nodes.length; i++) {
         for (j = i + 1; j < nodes.length; j++) {
@@ -625,21 +876,55 @@
         ctx.fillStyle = 'rgba(167,139,250,0.55)';
         ctx.beginPath(); ctx.arc(a.x, a.y, a.r, 0, 6.2832); ctx.fill();
       }
+    }
+
+    function step() {
+      if (!running) return;
+      for (var i = 0; i < nodes.length; i++) {
+        var a = nodes[i];
+        a.x += a.vx; a.y += a.vy;
+        if (a.x < 0 || a.x > w) a.vx *= -1;
+        if (a.y < 0 || a.y > h) a.vy *= -1;
+      }
+      draw();
       requestAnimationFrame(step);
     }
 
     window.addEventListener('resize', resize);
     document.addEventListener('visibilitychange', function () {
-      if (reduceMotion) return;
+      if (!animated) return;
       running = !document.hidden;
       if (running) requestAnimationFrame(step);
     });
     resize();
-    if (!reduceMotion) requestAnimationFrame(step);
+    if (animated) { requestAnimationFrame(step); }
+    else { draw(); }
+  }
+
+  /* ---------- Boot the hero backdrop : 3D -> animated 2D -> static 2D ---------- */
+  (function bootHero() {
+    var webgl = document.getElementById('webgl-canvas');
+    if (reduceMotion) {
+      webgl.style.display = 'none';
+      initCanvas2D(false);
+      return;
+    }
+    var ok = false;
+    if (window.THREE && webglOK()) {
+      try { ok = initThree(); } catch (e) { ok = false; }
+    }
+    if (ok) {
+      webgl.classList.add('on');
+    } else {
+      webgl.style.display = 'none';
+      initCanvas2D(true);
+    }
   })();
 
   render('all');
   observeReveals();
+  observeSplitHeadings();
+  document.body.classList.add('loaded');
 })();
 </script>
 </body>
