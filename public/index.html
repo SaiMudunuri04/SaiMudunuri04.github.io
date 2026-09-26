@@ -29,9 +29,21 @@
     <div class="nav-actions">
       <button class="theme-btn" id="theme-toggle" type="button" aria-label="Toggle dark and light theme" title="Toggle theme">☀</button>
       <a class="btn btn-primary btn-sm" href="resume.pdf">Resume ↓</a>
+      <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+      </button>
     </div>
   </div>
 </nav>
+<div class="nav-scrim" id="nav-scrim" aria-hidden="true"></div>
+<div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Menu">
+  <a href="#projects">Projects</a>
+  <a href="#experience">Experience</a>
+  <a href="#approach">Approach</a>
+  <a href="#skills">Skills</a>
+  <a href="#contact">Contact</a>
+  <a class="btn btn-primary" href="resume.pdf">Resume ↓</a>
+</div>
 
 <main id="main">
   <!-- Hero : real-time 3D particle neural cosmos (Three.js) with 2D fallback -->
@@ -39,6 +51,7 @@
     <canvas id="webgl-canvas" aria-hidden="true"></canvas>
     <canvas id="net-canvas" aria-hidden="true"></canvas>
     <div class="hero-nebula" aria-hidden="true"></div>
+    <div class="hero-scrim" aria-hidden="true"></div>
     <div class="hero-vignette" aria-hidden="true"></div>
     <div id="cursor-glow" aria-hidden="true"></div>
     <div class="container hero-inner">
@@ -573,6 +586,31 @@
     });
   })();
 
+  /* ---------- Mobile menu ---------- */
+  (function mobileMenu() {
+    var toggle = document.getElementById('nav-toggle');
+    var menu = document.getElementById('mobile-menu');
+    var scrim = document.getElementById('nav-scrim');
+    if (!toggle || !menu) return;
+    function setOpen(open) {
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      menu.classList.toggle('open', open);
+      if (scrim) scrim.classList.toggle('on', open);
+      document.body.style.overflow = open ? 'hidden' : '';
+    }
+    toggle.addEventListener('click', function () {
+      setOpen(toggle.getAttribute('aria-expanded') !== 'true');
+    });
+    if (scrim) scrim.addEventListener('click', function () { setOpen(false); });
+    menu.addEventListener('click', function (e) {
+      if (e.target.closest('a')) setOpen(false);
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') setOpen(false);
+    });
+  })();
+
   /* ---------- Cursor-following ambient glow inside the hero ---------- */
   (function cursorGlow() {
     var glow = document.getElementById('cursor-glow');
@@ -662,11 +700,12 @@
     } catch (e) { return false; }
 
     var isSmall = Math.min(window.innerWidth || 0, window.innerHeight || 0) < 640;
+    var isMobile = (window.innerWidth || 0) < 760;
     var N_CORE = isSmall ? 1300 : 2400;
     var N_SHELL = isSmall ? 450 : 950;
     var N_RING = isSmall ? 320 : 680;
 
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.75));
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, isSmall ? 1.5 : 1.75));
     var scene = new THREE.Scene();
     scene.fog = new THREE.FogExp2(0x05070f, 0.05);
     var camera = new THREE.PerspectiveCamera(55, 1, 0.1, 120);
@@ -753,7 +792,11 @@
     ring.rotation.z = 0.25;
     world.add(ring);
 
-    world.position.x = 2.4;
+    /* On phones the cosmos is centered above the copy; on larger screens it sits right. */
+    var baseX = isMobile ? 0 : 2.4;
+    var baseY = isMobile ? 1.15 : 0;
+    world.position.x = baseX;
+    world.position.y = baseY;
     world.rotation.z = 0.12;
 
     /* Mouse parallax targets */
@@ -816,8 +859,8 @@
         var k = scrollState.heroK;
         camera.position.z = 8.2 + k * 3.4;
         camera.position.y = 0.5 - k * 1.6;
-        world.position.y = k * 2.2;
-        world.position.x = 2.4 - k * 1.2;
+        world.position.y = baseY + k * 2.2;
+        world.position.x = baseX - k * (isMobile ? 0 : 1.2);
         camera.lookAt(world.position.x * 0.4, 0, 0);
         renderer.render(scene, camera);
       }
