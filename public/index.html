@@ -1,304 +1,416 @@
 <!DOCTYPE html>
-<html lang="en" id="top" data-theme="dark">
+<html lang="en" id="top">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Sai Mudunuri — AI/ML Engineer</title>
-<meta name="description" content="Sai Krishnam Raju Mudunuri — AI/ML Engineer working across Core ML, Deep Learning, Generative AI, RAG and AI Agents. Inspectable projects, production experience at Honeywell and Infosys.">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sai Krishnam Raju Mudunuri — AI/ML Engineer</title>
+<meta name="description" content="Sai Krishnam Raju Mudunuri — AI/ML Engineer in Atlanta building production GenAI, RAG, LLM agents, and ML systems at Honeywell. Cut LLM inference cost 40% and RAG latency 62%.">
+<meta name="theme-color" content="#f6f5f1" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0b0d11" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Sai Krishnam Raju Mudunuri — AI/ML Engineer">
+<meta property="og:description" content="Production GenAI, RAG, LLM agents, and ML systems. 3.5 years at Honeywell and Infosys.">
+<meta property="og:url" content="https://saimudunuri04.github.io/">
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="https://saimudunuri04.github.io/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2314161b'/%3E%3Ctext x='32' y='41' font-family='monospace' font-size='24' font-weight='600' fill='%23f6f5f1' text-anchor='middle'%3ESM%3C/text%3E%3C/svg%3E">
+<script>
+  (function () {
+    var d = document.documentElement, t = null;
+    d.className += ' js';
+    try { t = localStorage.getItem('sm-theme'); } catch (e) {}
+    if (t !== 'light' && t !== 'dark') {
+      t = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+    d.setAttribute('data-theme', t);
+  })();
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Sai Krishnam Raju Mudunuri",
+  "jobTitle": "AI/ML Engineer",
+  "worksFor": { "@type": "Organization", "name": "Honeywell" },
+  "address": { "@type": "PostalAddress", "addressLocality": "Atlanta", "addressRegion": "GA" },
+  "email": "mailto:mudunuri.mskr@gmail.com",
+  "url": "https://saimudunuri04.github.io/",
+  "sameAs": [
+    "https://www.linkedin.com/in/sai-krishnam-raju-mudunuri-93438520a/",
+    "https://github.com/SaiMudunuri04"
+  ]
+}
+</script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to main content</a>
 <div id="scroll-progress" aria-hidden="true"></div>
-<div class="stars" aria-hidden="true"></div>
-<div class="grain" aria-hidden="true"></div>
 
+<!-- ============ Navigation ============ -->
 <nav class="site-nav" aria-label="Primary">
   <div class="container nav-inner">
-    <a class="brand-mark" href="#top" aria-label="Sai Mudunuri — back to top"><span class="brand-glyph" aria-hidden="true">◈</span>SM</a>
+    <a class="brand" href="#top" aria-label="Sai Mudunuri, back to top">
+      <span class="brand-mark" aria-hidden="true">SM</span>
+      <span class="brand-name">Sai Mudunuri</span>
+    </a>
     <div class="nav-links">
-      <a href="#projects">Projects</a>
+      <a href="#impact">Impact</a>
       <a href="#experience">Experience</a>
-      <a href="#approach">Approach</a>
+      <a href="#projects">Projects</a>
       <a href="#skills">Skills</a>
       <a href="#contact">Contact</a>
     </div>
     <div class="nav-actions">
-      <button class="theme-btn" id="theme-toggle" type="button" aria-label="Toggle dark and light theme" title="Toggle theme">☀</button>
-      <a class="btn btn-primary btn-sm" href="resume.pdf">Resume ↓</a>
-      <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
-        <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+      <button class="icon-btn" id="theme-toggle" type="button" aria-label="Switch color theme">
+        <svg class="theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg class="theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      </button>
+      <a class="btn btn-primary btn-sm nav-resume" href="resume.pdf" download>
+        Résumé
+        <svg class="arrow-d" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v14M6 12l6 6 6-6"/></svg>
+      </a>
+      <button class="icon-btn menu-btn" id="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span class="bars" aria-hidden="true"><span class="bar"></span><span class="bar"></span><span class="bar"></span></span>
       </button>
     </div>
   </div>
 </nav>
-<div class="nav-scrim" id="nav-scrim" aria-hidden="true"></div>
-<div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Menu">
-  <a href="#projects">Projects</a>
-  <a href="#experience">Experience</a>
-  <a href="#approach">Approach</a>
-  <a href="#skills">Skills</a>
-  <a href="#contact">Contact</a>
-  <a class="btn btn-primary" href="resume.pdf">Resume ↓</a>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#impact">Impact <span>01</span></a>
+  <a href="#experience">Experience <span>02</span></a>
+  <a href="#projects">Projects <span>03</span></a>
+  <a href="#skills">Skills <span>04</span></a>
+  <a href="#contact">Contact <span>05</span></a>
+  <a class="btn btn-primary" href="resume.pdf" download>Download résumé</a>
 </div>
 
 <main id="main">
-  <!-- Hero : real-time 3D particle neural cosmos (Three.js) with 2D fallback -->
-  <header class="hero">
-    <canvas id="webgl-canvas" aria-hidden="true"></canvas>
-    <canvas id="net-canvas" aria-hidden="true"></canvas>
-    <div class="hero-nebula" aria-hidden="true"></div>
-    <div class="hero-scrim" aria-hidden="true"></div>
-    <div class="hero-vignette" aria-hidden="true"></div>
-    <div id="cursor-glow" aria-hidden="true"></div>
-    <div class="container hero-inner">
-      <span class="eyebrow reveal-hero"><span class="dot" aria-hidden="true"></span>Open to AI/ML engineering opportunities</span>
-      <h1 class="hero-title" data-split>Sai Krishnam Raju <span class="grad shine">Mudunuri</span></h1>
-      <p class="role-line reveal-hero"><strong>AI/ML Engineer</strong> — Core ML, Deep Learning, GenAI, RAG &amp; AI Agents</p>
-      <p class="hero-sub reveal-hero">I build the systems around a model: the data boundary, evaluation, serving path, and the way it is operated.</p>
-      <div class="hero-ctas reveal-hero">
-        <a class="btn btn-primary magnetic" href="#projects">Explore projects ↗</a>
-        <a class="btn btn-ghost magnetic" href="resume.pdf">Download resume ↓</a>
-      </div>
-      <div class="telemetry reveal-hero" aria-hidden="true"><span class="t-prompt">$</span><span id="telemetry-line">build ············ passing</span><span class="t-caret">▍</span></div>
-      <p class="proof-strip reveal-hero">10 inspectable repositories — code, tests, and deployment configs</p>
-      <div class="hero-meta reveal-hero">
-        <span>📍 Atlanta, Georgia</span>
-        <span>💼 Honeywell · AI/ML Engineer</span>
-        <span>🎓 M.S. Information Systems Technology</span>
-      </div>
-      <a class="scroll-hint" href="#impact" aria-label="Scroll to measured impact"><span class="mouse" aria-hidden="true"><span class="wheel"></span></span></a>
-    </div>
-  </header>
 
-  <div class="neural-divider" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
-
-  <!-- Verified impact -->
-  <section class="impact-band" id="impact" aria-labelledby="impact-title">
-    <div class="container">
-      <p class="kicker reveal">Verified impact</p>
-      <h2 id="impact-title" class="section-title split-obs" data-split>Measured outcomes, not adjectives</h2>
-      <p class="lede reveal">Measured outcomes from professional experience — the numbers behind the work.</p>
-      <div class="impact-grid" role="list" aria-label="Measured outcomes">
-        <div class="impact-card glass reveal" role="listitem">
-          <div class="num grad-text" data-count="30" data-suffix="%">0%</div>
-          <div class="lbl">lower inference cost</div>
-          <div class="sub">through complexity-aware routing</div>
-        </div>
-        <div class="impact-card glass reveal" role="listitem">
-          <div class="num grad-text" data-count="60" data-suffix="%">0%</div>
-          <div class="lbl">less manual chart review</div>
-          <div class="sub">with ClinicalBERT extraction</div>
-        </div>
-        <div class="impact-card glass reveal" role="listitem">
-          <div class="num grad-text" data-count="50" data-suffix="%">0%</div>
-          <div class="lbl">faster model deployment</div>
-          <div class="sub">through automated delivery</div>
-        </div>
-        <div class="impact-card glass reveal" role="listitem">
-          <div class="num grad-text" data-count="30" data-suffix="%">0%</div>
-          <div class="lbl">fewer model-quality incidents</div>
-          <div class="sub">with drift monitoring</div>
-        </div>
-        <div class="impact-card glass reveal" role="listitem">
-          <div class="num grad-text" data-count="15" data-suffix="M+">0M+</div>
-          <div class="lbl">clinical records</div>
-          <div class="sub">transformed into risk features</div>
-        </div>
+<!-- ============ Hero ============ -->
+<header class="hero" id="home">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <span class="status-pill rise"><span class="status-dot" aria-hidden="true"></span>Open to AI/ML Engineer roles · Atlanta, GA</span>
+      <h1 class="reveal" data-delay="1">
+        <span class="hero-name">Sai Krishnam Raju Mudunuri — AI/ML Engineer</span>
+        <span class="hero-tag">I build LLM &amp; ML systems that <em>hold up in production.</em></span>
+      </h1>
+      <p class="hero-lede rise" data-delay="2">
+        <strong>3.5 years</strong> shipping RAG, agentic workflows, LLM fine-tuning, and classic ML at
+        <strong>Honeywell</strong> (industrial IoT) and <strong>Infosys</strong> (healthcare). I own the parts around the model —
+        retrieval, evaluation, serving cost, and safe releases.
+      </p>
+      <div class="hero-ctas rise" data-delay="3">
+        <a class="btn btn-primary" href="#experience">
+          See my work
+          <svg class="arrow-r" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a class="btn btn-secondary" href="resume.pdf" download>
+          Download résumé
+          <svg class="arrow-d" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v14M6 12l6 6 6-6"/></svg>
+        </a>
+        <a class="btn btn-ghost" href="mailto:mudunuri.mskr@gmail.com">mudunuri.mskr@gmail.com</a>
       </div>
-    </div>
-  </section>
-
-  <!-- Tech ticker -->
-  <section class="marquee-band" aria-label="Technologies">
-    <div class="marquee" id="tech-marquee">
-      <div class="marquee-track">
-        <span>Python</span><span class="sep" aria-hidden="true">✦</span><span>PyTorch</span><span class="sep" aria-hidden="true">✦</span><span>LangGraph</span><span class="sep" aria-hidden="true">✦</span><span>vLLM</span><span class="sep" aria-hidden="true">✦</span><span>Kubernetes</span><span class="sep" aria-hidden="true">✦</span><span>Terraform</span><span class="sep" aria-hidden="true">✦</span><span>Amazon Bedrock</span><span class="sep" aria-hidden="true">✦</span><span>SageMaker</span><span class="sep" aria-hidden="true">✦</span><span>FastAPI</span><span class="sep" aria-hidden="true">✦</span><span>Docker</span><span class="sep" aria-hidden="true">✦</span><span>Helm</span><span class="sep" aria-hidden="true">✦</span><span>Argo CD</span><span class="sep" aria-hidden="true">✦</span><span>OpenSearch</span><span class="sep" aria-hidden="true">✦</span><span>MLflow</span><span class="sep" aria-hidden="true">✦</span><span>PySpark</span><span class="sep" aria-hidden="true">✦</span><span>LoRA</span><span class="sep" aria-hidden="true">✦</span><span>RAG</span><span class="sep" aria-hidden="true">✦</span><span>MCP</span><span class="sep" aria-hidden="true">✦</span><span>Hugging Face</span><span class="sep" aria-hidden="true">✦</span><span>LangChain</span><span class="sep" aria-hidden="true">✦</span><span>EKS</span><span class="sep" aria-hidden="true">✦</span><span>CI/CD</span><span class="sep" aria-hidden="true">✦</span><span>XGBoost</span><span class="sep" aria-hidden="true">✦</span><span>scikit-learn</span><span class="sep" aria-hidden="true">✦</span><span class="marquee-dup" aria-hidden="true" style="display:contents"><span>Python</span><span class="sep" aria-hidden="true">✦</span><span>PyTorch</span><span class="sep" aria-hidden="true">✦</span><span>LangGraph</span><span class="sep" aria-hidden="true">✦</span><span>vLLM</span><span class="sep" aria-hidden="true">✦</span><span>Kubernetes</span><span class="sep" aria-hidden="true">✦</span><span>Terraform</span><span class="sep" aria-hidden="true">✦</span><span>Amazon Bedrock</span><span class="sep" aria-hidden="true">✦</span><span>SageMaker</span><span class="sep" aria-hidden="true">✦</span><span>FastAPI</span><span class="sep" aria-hidden="true">✦</span><span>Docker</span><span class="sep" aria-hidden="true">✦</span><span>Helm</span><span class="sep" aria-hidden="true">✦</span><span>Argo CD</span><span class="sep" aria-hidden="true">✦</span><span>OpenSearch</span><span class="sep" aria-hidden="true">✦</span><span>MLflow</span><span class="sep" aria-hidden="true">✦</span><span>PySpark</span><span class="sep" aria-hidden="true">✦</span><span>LoRA</span><span class="sep" aria-hidden="true">✦</span><span>RAG</span><span class="sep" aria-hidden="true">✦</span><span>MCP</span><span class="sep" aria-hidden="true">✦</span><span>Hugging Face</span><span class="sep" aria-hidden="true">✦</span><span>LangChain</span><span class="sep" aria-hidden="true">✦</span><span>EKS</span><span class="sep" aria-hidden="true">✦</span><span>CI/CD</span><span class="sep" aria-hidden="true">✦</span><span>XGBoost</span><span class="sep" aria-hidden="true">✦</span><span>scikit-learn</span><span class="sep" aria-hidden="true">✦</span></span>
-      </div>
-    </div>
-  </section>
-
-  <!-- Projects -->
-  <section class="section" id="projects" aria-labelledby="projects-title">
-    <div class="container">
-      <p class="kicker reveal">Selected work</p>
-      <h2 id="projects-title" class="section-title split-obs" data-split>Systems you can <span class="grad">inspect</span></h2>
-      <p class="lede reveal">Ten independent engineering repositories spanning core ML, retrieval, vision, agent workflows, and fine-tuning. Every project ships code, tests, deployment configuration, and documentation — designed to be read, run, and reviewed.</p>
-      <div class="filters reveal" role="group" aria-label="Filter projects by category">
-        <button class="filter-btn" type="button" data-filter="all" aria-pressed="true">All</button>
-        <button class="filter-btn" type="button" data-filter="Core ML" aria-pressed="false">Core ML</button>
-        <button class="filter-btn" type="button" data-filter="Generative AI" aria-pressed="false">Generative AI</button>
-        <button class="filter-btn" type="button" data-filter="Vision &amp; Search" aria-pressed="false">Vision &amp; Search</button>
-        <button class="filter-btn" type="button" data-filter="Agents" aria-pressed="false">Agents</button>
-        <button class="filter-btn" type="button" data-filter="Fine-tuning" aria-pressed="false">Fine-tuning</button>
-      </div>
-      <p class="result-count" id="result-count" aria-live="polite"></p>
-      <div class="project-grid" id="project-grid"></div>
-      <aside class="disclaimer reveal">
-        <strong>Independent repos.</strong> These are independent engineering repositories — employment work and portfolio code are presented separately. Running cloud training or deploying to Kubernetes requires your own account, data, model artifacts, and cluster; this portfolio does not claim live production deployments.
-      </aside>
-    </div>
-  </section>
-
-  <!-- Experience -->
-  <section class="section alt" id="experience" aria-labelledby="experience-title">
-    <div class="container">
-      <p class="kicker reveal">Experience</p>
-      <h2 id="experience-title" class="section-title split-obs" data-split>The work behind <span class="grad">the work</span></h2>
-      <p class="lede reveal">Professional experience informs how these independent projects are built — the same care for evaluation, serving, and operations.</p>
-      <ol class="timeline">
-        <li class="timeline-item reveal">
-          <article class="job-card glass">
-            <div class="job-head">
-              <div>
-                <h3>AI/ML Engineer</h3>
-                <span class="job-co">Honeywell · Georgia</span>
-              </div>
-              <span class="job-dates">OCT 2024 — PRESENT</span>
-            </div>
-            <ul>
-              <li>Built an <span class="metric">Isolation Forest anomaly detection system</span> over industrial equipment telemetry (temperature, pressure, vibration, motor current, flow rate), flagging early degradation indicators — <span class="metric">reduced unplanned downtime by ~15–25%</span> (evaluated with ROC-AUC).</li>
-              <li>Built production <span class="metric">LangGraph agent workflows</span> over authenticated <span class="metric">FastMCP tools</span> calling internal finance APIs, with scoped permissions and output validation; deployed on GPU-enabled EKS and traced with LangSmith.</li>
-              <li>Built finance RAG with Amazon Bedrock, Titan embeddings, and OpenSearch hybrid search (BM25 + vector retrieval), with metadata filters, reranking, and citations linked to source documents.</li>
-              <li>Fine-tuned open-source LLMs with LoRA and QLoRA for financial-document understanding.</li>
-              <li>Deployed quantized LLMs on GPU-enabled Amazon EKS with vLLM — continuous batching, tensor parallelism, and PagedAttention KV-cache management.</li>
-              <li>Evaluated RAG faithfulness and context precision/recall with RAGAS and DeepEval; monitored latency with CloudWatch.</li>
-              <li>Managed Terraform configurations and Helm charts for ML services; Argo CD GitOps syncing Kubernetes deployments with version-controlled manifests; SageMaker Pipelines, Model Registry, and canary deployments with automated rollback.</li>
-            </ul>
-          </article>
+      <ul class="hero-meta rise" data-delay="3">
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+          AI/ML Engineer · Honeywell
         </li>
-        <li class="timeline-item reveal">
-          <article class="job-card glass">
-            <div class="job-head">
-              <div>
-                <h3>ML Engineer</h3>
-                <span class="job-co">Infosys · India</span>
-              </div>
-              <span class="job-dates">JAN 2022 — JUL 2023</span>
-            </div>
-            <ul>
-              <li>Developed <span class="metric">XGBoost, LightGBM, and Random Forest</span> models for readmission risk and disease progression; used SHAP to review predictions with clinical stakeholders.</li>
-              <li>Engineered clinical risk features from <span class="metric">15M+ EHR, lab, and patient-encounter records</span> with Python and PySpark.</li>
-              <li>Compared models with cross-validation, F1-score, and ROC-AUC; tracked experiments in MLflow.</li>
-              <li><span class="metric">Reduced manual chart-review effort by 60%</span> with ClinicalBERT pipelines extracting diagnoses, medications, and observations from physician notes.</li>
-              <li><span class="metric">Cut model deployment time by 50%</span> by automating deployment, versioning, and retraining on SageMaker with Docker, MLflow, and CI/CD.</li>
-              <li><span class="metric">Reduced model-quality incidents by 30%</span> with drift monitoring via SageMaker Model Monitor, CloudWatch, and MLflow.</li>
-            </ul>
-          </article>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></svg>
+          M.S. Information System Technologies
         </li>
-      </ol>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-4 3 4 3M16 9l4 3-4 3M14 5l-4 14"/></svg>
+          Python · AWS · Kubernetes
+        </li>
+      </ul>
     </div>
-  </section>
 
-  <!-- Approach -->
-  <section class="section" id="approach" aria-labelledby="approach-title">
-    <div class="container">
-      <p class="kicker reveal">Approach</p>
-      <h2 id="approach-title" class="section-title split-obs" data-split>Good models need <span class="grad">good systems</span></h2>
-      <p class="lede reveal">My work connects model behavior to dependable software — how a system fails, what evidence it returns, and whether another engineer can understand it later.</p>
-      <div class="steps">
-        <div class="step glass reveal">
-          <div class="step-num">01</div>
-          <h3>Define</h3>
-          <p>Start at the boundary. Explicit inputs, data validation, and leakage-aware evaluation create a trustworthy baseline before complexity grows.</p>
+    <figure class="trace-wrap rise" data-delay="2" aria-labelledby="trace-caption">
+      <div class="trace" id="trace">
+        <div class="trace-head">
+          <div class="trace-title">
+            <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
+            <b>trace · rag-assistant</b>
+          </div>
+          <span class="trace-badge">illustrative</span>
         </div>
-        <div class="step glass reveal">
-          <div class="step-num">02</div>
-          <h3>Build</h3>
-          <p>Make decisions visible. Documented architecture, inspectable code, and tests reveal why a model or retrieval system behaves as it does.</p>
+        <div class="trace-body">
+          <div class="trace-query"><span class="mono">query</span><span>“Which checks apply after a high-vibration alarm on a pump?”</span></div>
+          <div class="trace-scale" aria-hidden="true"><span></span><div><span>0 s</span><span>1.15 s</span><span>2.3 s</span></div></div>
+          <div class="span-row">
+            <div class="span-label"><span class="span-name">retrieve</span><span class="span-detail">BM25 + vector · 10k+ docs</span></div>
+            <div class="span-track"><span class="span-bar" style="--l:0%;--w:20%;--c:var(--bar-1);--d:.15s"></span></div>
+          </div>
+          <div class="span-row">
+            <div class="span-label"><span class="span-name">rerank</span><span class="span-detail">metadata filters · top-k</span></div>
+            <div class="span-track"><span class="span-bar" style="--l:20%;--w:10%;--c:var(--bar-2);--d:.55s"></span></div>
+          </div>
+          <div class="span-row">
+            <div class="span-label"><span class="span-name">generate</span><span class="span-detail">Gemma · QLoRA · vLLM on EKS</span></div>
+            <div class="span-track"><span class="span-bar" style="--l:30%;--w:60%;--c:var(--bar-3);--d:.85s"></span></div>
+          </div>
+          <div class="span-row">
+            <div class="span-label"><span class="span-name">validate</span><span class="span-detail">schema · citations</span></div>
+            <div class="span-track"><span class="span-bar" style="--l:90%;--w:10%;--c:var(--bar-4);--d:1.35s"></span></div>
+          </div>
         </div>
-        <div class="step glass reveal">
-          <div class="step-num">03</div>
-          <h3>Operate</h3>
-          <p>Design for the handoff. Health endpoints, deployment configuration, observability, and runbooks make the next step clear when things go wrong.</p>
+        <div class="trace-foot">
+          <div class="trace-total">
+            <span class="label">end-to-end</span>
+            <span class="now">2.3 s</span>
+            <span class="was">6.0 s</span>
+          </div>
+          <span class="delta">↓ 62% latency</span>
         </div>
+        <div class="trace-checks"><span>sources cited</span><span>output schema valid</span><span>scoped tool permissions</span></div>
+      </div>
+      <figcaption class="trace-note" id="trace-caption">Shape of the production RAG assistant I built at Honeywell. Span widths are illustrative; the 6 s → 2.3 s result is measured.</figcaption>
+    </figure>
+  </div>
+</header>
+
+<!-- ============ Impact ============ -->
+<section class="section tint" id="impact" aria-labelledby="impact-title">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Impact</span>
+      <h2 id="impact-title">Measured outcomes, <em>not adjectives.</em></h2>
+      <p>Results from production work at Honeywell and Infosys — the numbers I can walk you through in an interview.</p>
+    </div>
+    <div class="impact-grid reveal" data-delay="1">
+      <div class="metric">
+        <span class="metric-org">Honeywell</span>
+        <div class="metric-value">62<small>%</small></div>
+        <div class="metric-label">Lower RAG response latency</div>
+        <p class="metric-ctx">6 s → 2.3 s on a hybrid-search assistant over 10,000+ engineering documents.</p>
+      </div>
+      <div class="metric">
+        <span class="metric-org">Honeywell</span>
+        <div class="metric-value">40<small>%</small></div>
+        <div class="metric-label">Lower LLM inference cost</div>
+        <p class="metric-ctx">QLoRA-tuned Gemma, quantized and served with vLLM on GPU-enabled Amazon EKS.</p>
+      </div>
+      <div class="metric">
+        <span class="metric-org">Honeywell</span>
+        <div class="metric-value">45<small>%</small></div>
+        <div class="metric-label">Less GPU memory</div>
+        <p class="metric-ctx">Quantized serving versus the baseline deployment, with no change to the API.</p>
+      </div>
+      <div class="metric">
+        <span class="metric-org">Honeywell</span>
+        <div class="metric-value">35<small>%</small></div>
+        <div class="metric-label">Fewer false maintenance alerts</div>
+        <p class="metric-ctx">Isolation Forest on equipment telemetry: 0.92 ROC-AUC, 83% precision, 91% recall.</p>
+      </div>
+      <div class="metric">
+        <span class="metric-org">Honeywell</span>
+        <div class="metric-value">2d<small>→</small>4h</div>
+        <div class="metric-label">Model release time</div>
+        <p class="metric-ctx">Terraform, Helm, Argo CD, and SageMaker Pipelines with canary rollouts.</p>
+      </div>
+      <div class="metric">
+        <span class="metric-org">Infosys</span>
+        <div class="metric-value">60<small>%</small></div>
+        <div class="metric-label">Less manual chart review</div>
+        <p class="metric-ctx">ClinicalBERT pipelines extracting diagnoses and medications from clinical notes.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Skills -->
-  <section class="section alt" id="skills" aria-labelledby="skills-title">
-    <div class="container">
-      <p class="kicker reveal">Toolkit</p>
-      <h2 id="skills-title" class="section-title split-obs" data-split>A focused <span class="grad">engineering toolkit</span></h2>
-      <p class="lede reveal">Skills grouped around the work recruiters can inspect: modeling, retrieval, cloud delivery, and the operational systems that make AI useful.</p>
-      <div class="skill-groups">
-        <div class="skill-group glass reveal">
-          <h3><span class="sg-dot" style="--dot:#38bdf8" aria-hidden="true"></span>Modeling</h3><div class="sub">ML &amp; data</div>
-          <p class="items">Python · SQL · PyTorch · TensorFlow · scikit-learn · XGBoost · LightGBM · Pandas · NumPy · PySpark · SHAP · Feature engineering · Model evaluation · Hyperparameter tuning · Optuna · ClinicalBERT</p>
+<!-- ============ Experience ============ -->
+<section class="section" id="experience" aria-labelledby="experience-title">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Experience</span>
+      <h2 id="experience-title">Where I've shipped <em>production AI.</em></h2>
+      <p>Two domains where mistakes are expensive — industrial equipment and patient care — so evaluation, guardrails, and monitoring come first.</p>
+    </div>
+
+    <div class="roles">
+      <article class="role reveal">
+        <div class="role-side">
+          <div class="role-logo" aria-hidden="true">HW</div>
+          <h3 class="role-company">Honeywell</h3>
+          <p class="role-title">AI/ML Engineer</p>
+          <div class="role-meta"><span>Oct 2024 — Present</span><span>Atlanta, GA</span></div>
+          <span class="role-domain">GenAI · LLM agents · Industrial IoT</span>
         </div>
-        <div class="skill-group glass reveal">
-          <h3><span class="sg-dot" style="--dot:#a78bfa" aria-hidden="true"></span>Intelligence</h3><div class="sub">Generative AI &amp; NLP</div>
-          <p class="items">Amazon Bedrock · Hugging Face Transformers · LangChain · LangGraph · LlamaIndex · RAG · MCP · FastMCP · vLLM · AI agents · Prompt engineering · LoRA · QLoRA · PEFT · Mistral · LLaMA · Claude · Titan embeddings</p>
+        <div>
+          <ul class="role-points">
+            <li>Built a production <strong>RAG assistant</strong> over <span class="kpi">10,000+</span> internal engineering documents using Amazon Bedrock (Titan embeddings) and OpenSearch hybrid search — BM25 + vector, metadata filters, reranking, citations — cutting response latency from 6 s to 2.3 s <span class="kpi">−62%</span>.</li>
+            <li>Developed <strong>LangGraph agents</strong> automating enterprise workflows across <span class="kpi">20+</span> authenticated FastMCP tools and internal APIs, with scoped permissions plus schema and output validation that block invalid tool calls before execution.</li>
+            <li>Fine-tuned <strong>Gemma with QLoRA</strong> and served the quantized model with vLLM on GPU-enabled Amazon EKS, reducing GPU memory by <span class="kpi">45%</span> and inference cost by <span class="kpi">40%</span>.</li>
+            <li>Built an <strong>Isolation Forest</strong> anomaly detector on industrial telemetry (temperature, pressure, vibration, motor current, flow): <span class="kpi">0.92 ROC-AUC</span>, 83% precision, 91% recall — <span class="kpi">35%</span> fewer false maintenance alerts than static thresholds.</li>
+            <li>Implemented <strong>LLM evaluation and tracing</strong> with LangSmith, RAGAS, and DeepEval to catch hallucinations, retrieval failures, and invalid tool calls; improved reliability through trace-level analysis, retrieval tuning, and output validation.</li>
+            <li>Automated <strong>model releases</strong> with Terraform, Helm, Argo CD, GitHub Actions, and SageMaker Pipelines — release time from <span class="kpi">2 days → 4 hours</span> with canary rollouts and reproducible deployments.</li>
+          </ul>
+          <div class="stack" aria-label="Technologies used at Honeywell">
+            <span class="chip">LangGraph</span><span class="chip">FastMCP</span><span class="chip">Amazon Bedrock</span><span class="chip">OpenSearch</span><span class="chip">vLLM</span><span class="chip">QLoRA</span><span class="chip">EKS</span><span class="chip">LangSmith</span><span class="chip">RAGAS</span><span class="chip">Terraform</span><span class="chip">Argo CD</span>
+          </div>
         </div>
-        <div class="skill-group glass reveal">
-          <h3><span class="sg-dot" style="--dot:#34d399" aria-hidden="true"></span>Retrieval</h3><div class="sub">Vector search &amp; retrieval</div>
-          <p class="items">Amazon OpenSearch · FAISS · BM25 · Pinecone · Redis · Embeddings · Hybrid search · Metadata filtering · Reranking</p>
+      </article>
+
+      <article class="role reveal">
+        <div class="role-side">
+          <div class="role-logo" aria-hidden="true">IN</div>
+          <h3 class="role-company">Infosys</h3>
+          <p class="role-title">ML Engineer</p>
+          <div class="role-meta"><span>Jan 2022 — Jul 2023</span><span>Chennai, India</span></div>
+          <span class="role-domain">Healthcare ML · Clinical NLP</span>
         </div>
-        <div class="skill-group glass reveal">
-          <h3><span class="sg-dot" style="--dot:#fbbf24" aria-hidden="true"></span>Cloud</h3><div class="sub">AWS &amp; inference APIs</div>
-          <p class="items">EC2 · S3 · ECR · EKS · Lambda · API Gateway · SageMaker · SageMaker Pipelines · Model Registry · VPC · IAM · FastAPI · REST APIs</p>
+        <div>
+          <ul class="role-points">
+            <li>Built <strong>XGBoost, LightGBM, and Random Forest</strong> models for readmission risk and disease progression with hyperparameter tuning and cross-validation; best model reached <span class="kpi">0.92 ROC-AUC</span> and <span class="kpi">88% recall</span>, explained with SHAP.</li>
+            <li>Built <strong>ClinicalBERT pipelines</strong> extracting diagnoses, medications, and observations from clinical notes, cutting manual chart review by <span class="kpi">60%</span>.</li>
+            <li>Preprocessed and engineered features from <span class="kpi">15M+</span> EHR, lab, and encounter records with Python, PySpark, Pandas, and NumPy.</li>
+            <li>Automated <strong>SageMaker deployment</strong>, versioning, and retraining with Docker, MLflow, and CI/CD — deployment time down <span class="kpi">50%</span>; drift monitoring reduced model-quality incidents by <span class="kpi">30%</span>.</li>
+          </ul>
+          <div class="stack" aria-label="Technologies used at Infosys">
+            <span class="chip">XGBoost</span><span class="chip">LightGBM</span><span class="chip">SHAP</span><span class="chip">ClinicalBERT</span><span class="chip">PySpark</span><span class="chip">SageMaker</span><span class="chip">MLflow</span><span class="chip">Docker</span>
+          </div>
         </div>
-        <div class="skill-group glass reveal">
-          <h3><span class="sg-dot" style="--dot:#f472b6" aria-hidden="true"></span>Delivery</h3><div class="sub">Delivery &amp; MLOps</div>
-          <p class="items">Linux · Git · Docker · Kubernetes · Terraform · Helm · Argo CD · CI/CD · MLflow · DVC · Model versioning · Canary releases</p>
-        </div>
-        <div class="skill-group glass reveal">
-          <h3><span class="sg-dot" style="--dot:#22d3ee" aria-hidden="true"></span>Operate</h3><div class="sub">Observability &amp; pipelines</div>
-          <p class="items">Prometheus · Grafana · CloudWatch · Latency tracing · ETL · Batch processing · Data quality · S3 data lakes</p>
-        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Projects ============ -->
+<section class="section tint" id="projects" aria-labelledby="projects-title">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Projects</span>
+      <h2 id="projects-title">Systems you can <em>read, run, and review.</em></h2>
+      <p>Independent repos with code, tests, CI, and Helm charts — built on my own time to show how I engineer, end to end.</p>
+    </div>
+
+    <div class="featured-grid" id="featured-grid"></div>
+
+    <div class="repo-head">
+      <div>
+        <h3>More repositories</h3>
+        <p id="repo-count">Every repo ships code, tests, deployment config, and docs.</p>
+      </div>
+      <div class="filters" role="group" aria-label="Filter repositories by category" id="filters">
+        <button class="filter" type="button" data-filter="all" aria-pressed="true">All</button>
+        <button class="filter" type="button" data-filter="Generative AI" aria-pressed="false">Generative AI</button>
+        <button class="filter" type="button" data-filter="Agents" aria-pressed="false">Agents</button>
+        <button class="filter" type="button" data-filter="Core ML" aria-pressed="false">Core ML</button>
+        <button class="filter" type="button" data-filter="Fine-tuning" aria-pressed="false">Fine-tuning</button>
+        <button class="filter" type="button" data-filter="Vision & Search" aria-pressed="false">Vision &amp; Search</button>
       </div>
     </div>
-  </section>
+    <div class="repo-grid" id="repo-grid"></div>
 
-  <!-- Education -->
-  <section class="section" id="education" aria-labelledby="education-title">
-    <div class="container">
-      <p class="kicker reveal">Foundation</p>
-      <h2 id="education-title" class="section-title split-obs" data-split>Education &amp; <span class="grad">credentials</span></h2>
-      <p class="lede reveal">Formal study, hands-on engineering, and continued practice across model development and software delivery.</p>
-      <div class="edu-grid">
-        <div class="edu-card glass reveal">
-          <div class="deg">Graduate study</div>
-          <h3>Master's in Information Systems Technology</h3>
-          <p>Wilmington University</p>
-        </div>
-        <div class="edu-card glass reveal">
-          <div class="deg">Undergraduate study</div>
-          <h3>Bachelor's in Computer Science &amp; Engineering</h3>
-          <p>Rajalakshmi Engineering College</p>
-        </div>
+    <noscript>
+      <p class="disclaimer">Project cards need JavaScript. Browse every repository on <a href="https://github.com/SaiMudunuri04">GitHub</a>.</p>
+    </noscript>
+
+    <p class="disclaimer">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/></svg>
+      <span><strong>Independent repos.</strong> These are personal reference implementations, kept separate from employer work. Running cloud training or Kubernetes deployments requires your own account, data, and cluster; they don't claim live production traffic.</span>
+    </p>
+  </div>
+</section>
+
+<!-- ============ Skills ============ -->
+<section class="section" id="skills" aria-labelledby="skills-title">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Skills</span>
+      <h2 id="skills-title">The toolkit, <em>grouped by the job it does.</em></h2>
+    </div>
+    <div class="skills reveal" data-delay="1">
+      <div class="skill-row">
+        <h3>GenAI &amp; LLMs<span>Agents, fine-tuning, serving, evaluation</span></h3>
+        <div class="stack"><span class="chip">LangGraph</span><span class="chip">LangChain</span><span class="chip">MCP / FastMCP</span><span class="chip">Amazon Bedrock</span><span class="chip">Hugging Face</span><span class="chip">vLLM</span><span class="chip">QLoRA / LoRA</span><span class="chip">Gemma</span><span class="chip">LangSmith</span><span class="chip">RAGAS</span><span class="chip">DeepEval</span></div>
+      </div>
+      <div class="skill-row">
+        <h3>RAG &amp; Search<span>Retrieval that stays grounded</span></h3>
+        <div class="stack"><span class="chip">OpenSearch</span><span class="chip">FAISS</span><span class="chip">Pinecone</span><span class="chip">Redis</span><span class="chip">BM25</span><span class="chip">Hybrid search</span><span class="chip">Reranking</span></div>
+      </div>
+      <div class="skill-row">
+        <h3>Machine Learning<span>Modeling and explainability</span></h3>
+        <div class="stack"><span class="chip">PyTorch</span><span class="chip">TensorFlow</span><span class="chip">scikit-learn</span><span class="chip">XGBoost</span><span class="chip">LightGBM</span><span class="chip">SHAP</span><span class="chip">ClinicalBERT</span><span class="chip">Isolation Forest</span></div>
+      </div>
+      <div class="skill-row">
+        <h3>MLOps &amp; Cloud<span>Shipping and operating models</span></h3>
+        <div class="stack"><span class="chip">AWS SageMaker</span><span class="chip">EKS</span><span class="chip">S3</span><span class="chip">CloudWatch</span><span class="chip">Docker</span><span class="chip">Kubernetes</span><span class="chip">Terraform</span><span class="chip">Helm</span><span class="chip">Argo CD</span><span class="chip">GitHub Actions</span><span class="chip">MLflow</span></div>
+      </div>
+      <div class="skill-row">
+        <h3>Languages &amp; Data<span>The everyday foundation</span></h3>
+        <div class="stack"><span class="chip">Python</span><span class="chip">SQL</span><span class="chip">PySpark</span><span class="chip">Pandas</span><span class="chip">NumPy</span><span class="chip">FastAPI</span><span class="chip">REST APIs</span></div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <div class="neural-divider" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
+<!-- ============ Education ============ -->
+<section class="section tint" id="education" aria-labelledby="education-title">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Education</span>
+      <h2 id="education-title">Foundation</h2>
+    </div>
+    <div class="edu-grid">
+      <article class="edu reveal">
+        <span class="edu-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></svg></span>
+        <div>
+          <span class="level">Master of Science</span>
+          <h3>Information System Technologies</h3>
+          <p>Wilmington University · Delaware</p>
+        </div>
+      </article>
+      <article class="edu reveal" data-delay="1">
+        <span class="edu-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V3H6.5A2.5 2.5 0 0 0 4 5.5v14z"/><path d="M8 7h8M8 11h6"/></svg></span>
+        <div>
+          <span class="level">Bachelor of Technology</span>
+          <h3>Computer Science and Engineering</h3>
+          <p>Rajalakshmi Engineering College · Chennai</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
 
-  <!-- Contact -->
-  <section class="section alt contact-section" id="contact" aria-labelledby="contact-title">
-    <div class="container">
-      <p class="kicker reveal">Contact</p>
-      <h2 id="contact-title" class="section-title split-obs" data-split>Let's build something <span class="grad">useful</span></h2>
-      <p class="lede reveal">Interested in AI/ML engineering, generative AI, and MLOps opportunities — let's talk about the problem you're solving.</p>
-      <div class="contact-grid">
-        <a class="contact-card glass reveal" href="mailto:mudunuri.mskr@gmail.com">
-          <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></span>
-          <span><span class="lbl">Email</span><br><span class="val">Email Sai ↗</span></span>
+<!-- ============ Contact ============ -->
+<section class="section" id="contact" aria-labelledby="contact-title">
+  <div class="container">
+    <div class="contact reveal">
+      <span class="eyebrow">Contact</span>
+      <h2 id="contact-title">Hiring for GenAI, LLM, or ML engineering? <em>Let's talk.</em></h2>
+      <p class="contact-lede">I'm open to AI/ML Engineer and Applied AI roles in Atlanta, hybrid or on-site. I usually reply within a day.</p>
+      <div class="email-row">
+        <a class="email-link" href="mailto:mudunuri.mskr@gmail.com">mudunuri.mskr@gmail.com</a>
+        <button class="copy-btn" type="button" id="copy-email" data-email="mudunuri.mskr@gmail.com">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"/></svg>
+          Copy
+        </button>
+      </div>
+      <div class="contact-links">
+        <a class="contact-link" href="https://www.linkedin.com/in/sai-krishnam-raju-mudunuri-93438520a/" target="_blank" rel="noopener">
+          <span><span class="k">LinkedIn</span><span class="v" style="display:block">Sai Krishnam Raju Mudunuri</span></span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
         </a>
-        <a class="contact-card glass reveal" href="https://www.linkedin.com/in/sai-krishnam-raju-mudunuri-93438520a/">
-          <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span>
-          <span><span class="lbl">LinkedIn</span><br><span class="val">LinkedIn ↗</span></span>
+        <a class="contact-link" href="https://github.com/SaiMudunuri04" target="_blank" rel="noopener">
+          <span><span class="k">GitHub</span><span class="v" style="display:block">SaiMudunuri04</span></span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
         </a>
-        <a class="contact-card glass reveal" href="https://github.com/SaiMudunuri04">
-          <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55v-2.17c-3.2.7-3.87-1.36-3.87-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.72-1.54-2.55-.29-5.23-1.28-5.23-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.38-5.25 5.67.41.35.77 1.05.77 2.12v3.14c0 .3.21.67.8.55A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg></span>
-          <span><span class="lbl">GitHub</span><br><span class="val">GitHub ↗</span></span>
+        <a class="contact-link" href="resume.pdf" download>
+          <span><span class="k">Résumé</span><span class="v" style="display:block">Download PDF</span></span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v14M6 12l6 6 6-6"/></svg>
         </a>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
 </main>
 
 <footer>
@@ -308,681 +420,177 @@
   </div>
 </footer>
 
-<script src="https://unpkg.com/three@0.149.0/build/three.min.js"></script>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
 <script src="projects.js"></script>
 <script>
 (function () {
   'use strict';
+  var root = document.documentElement;
   var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var finePointer = window.matchMedia && window.matchMedia('(pointer: fine)').matches;
 
-  /* ---------- Character-split headings (staggered reveal) ---------- */
-  function splitChars(el) {
-    var idx = 0;
-    var label = el.textContent.replace(/\s+/g, ' ').trim();
-    if (label) el.setAttribute('aria-label', label);
-    function walk(node) {
-      var kids = Array.prototype.slice.call(node.childNodes);
-      kids.forEach(function (kid) {
-        if (kid.nodeType === 3) {
-          var frag = document.createDocumentFragment();
-          kid.textContent.split('').forEach(function (ch) {
-            if (ch === ' ' || ch === '\n' || ch === '\t') {
-              frag.appendChild(document.createTextNode(' '));
-            } else {
-              var s = document.createElement('span');
-              s.className = 'ch';
-              s.setAttribute('aria-hidden', 'true');
-              s.style.setProperty('--i', idx++);
-              s.textContent = ch;
-              frag.appendChild(s);
-            }
-          });
-          node.replaceChild(frag, kid);
-        } else if (kid.nodeType === 1) {
-          walk(kid);
-        }
-      });
-    }
-    walk(el);
+  /* ---------- Theme ---------- */
+  var themeBtn = document.getElementById('theme-toggle');
+  function syncThemeLabel() {
+    var dark = root.getAttribute('data-theme') === 'dark';
+    themeBtn.setAttribute('aria-label', dark ? 'Switch to light theme' : 'Switch to dark theme');
   }
-  if (!reduceMotion) {
-    Array.prototype.forEach.call(document.querySelectorAll('[data-split]'), splitChars);
+  themeBtn.addEventListener('click', function () {
+    var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    try { localStorage.setItem('sm-theme', next); } catch (e) {}
+    syncThemeLabel();
+  });
+  syncThemeLabel();
+
+  /* ---------- Mobile menu ---------- */
+  var menuBtn = document.getElementById('menu-btn');
+  var menu = document.getElementById('mobile-menu');
+  function setMenu(open) {
+    menu.classList.toggle('open', open);
+    menuBtn.setAttribute('aria-expanded', String(open));
+    menuBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
   }
+  menuBtn.addEventListener('click', function () { setMenu(!menu.classList.contains('open')); });
+  menu.addEventListener('click', function (e) { if (e.target.closest('a')) setMenu(false); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setMenu(false); });
+  window.addEventListener('resize', function () { if (window.innerWidth >= 900) setMenu(false); });
 
-  /* ---------- Project cards (data-driven, untouched projects.js) ---------- */
-  var grid = document.getElementById('project-grid');
-  var count = document.getElementById('result-count');
-  var buttons = Array.prototype.slice.call(document.querySelectorAll('.filter-btn'));
+  /* ---------- Nav state + scroll progress ---------- */
+  var nav = document.querySelector('.site-nav');
+  var bar = document.getElementById('scroll-progress');
+  var ticking = false;
+  function onScroll() {
+    var y = window.scrollY;
+    nav.classList.toggle('scrolled', y > 8);
+    if (y < 200) document.querySelectorAll('.nav-links a.active').forEach(function (a) { a.classList.remove('active'); });
+    var max = document.documentElement.scrollHeight - window.innerHeight;
+    bar.style.transform = 'scaleX(' + (max > 0 ? Math.min(1, y / max) : 0) + ')';
+    ticking = false;
+  }
+  window.addEventListener('scroll', function () {
+    if (!ticking) { ticking = true; window.requestAnimationFrame(onScroll); }
+  }, { passive: true });
+  onScroll();
 
-  var ACCENT = {
-    'Core ML': 'cyan',
-    'Generative AI': 'violet',
-    'Vision & Search': 'emerald',
-    'Agents': 'amber',
-    'Fine-tuning': 'rose'
-  };
-
+  /* ---------- Helpers ---------- */
   function esc(s) {
     return String(s).replace(/[&<>"']/g, function (c) {
       return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
     });
   }
-
-  function linkRow(p) {
-    if (p.status === 'live') {
-      return '<div class="card-links">' +
-        '<a class="card-link" href="' + p.repo + '"><span>Explore repository</span><span aria-hidden="true">↗</span></a>' +
-        '<a class="card-link card-link--helm" href="' + p.helm + '"><span>Helm chart</span><span aria-hidden="true">↗</span></a></div>';
-    }
-    return '<span class="in-progress-badge">● In progress</span>';
+  var ext = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>';
+  function links(p, cls) {
+    if (p.status !== 'live') return '<span class="chip">In progress</span>';
+    return '<a class="' + cls + '" href="' + esc(p.repo) + '" target="_blank" rel="noopener">Repository ' + ext + '</a>' +
+           (p.helm ? '<a class="' + (cls === 'btn btn-primary btn-sm' ? 'btn btn-secondary btn-sm' : cls) + '" href="' + esc(p.helm) + '" target="_blank" rel="noopener">Helm chart ' + ext + '</a>' : '');
+  }
+  function chips(tags) {
+    return tags.map(function (t) { return '<span class="chip">' + esc(t) + '</span>'; }).join('');
   }
 
-  function pipeRail(p) {
-    var raw = p.pipeline.split('→').map(function (s) { return s.trim(); });
-    var items = [];
-    raw.forEach(function (s, k) {
-      if (k > 0) items.push('<li class="pipe-arrow" aria-hidden="true">→</li>');
-      items.push('<li class="pipe-step"><span class="pipe-node" aria-hidden="true"></span><span>' + esc(s) + '</span></li>');
-    });
-    return '<ol class="pipe-rail reveal" aria-label="Process: ' + esc(raw.join(' → ')) + '">' + items.join('') + '</ol>';
-  }
+  /* ---------- Projects ---------- */
+  var data = (typeof PROJECTS !== 'undefined' && Array.isArray(PROJECTS)) ? PROJECTS : [];
+  var featured = data.filter(function (p) { return p.featured; });
+  var rest = data.filter(function (p) { return !p.featured; });
 
-  function cardHTML(p, i, delay) {
-    var accent = ACCENT[p.category] || 'cyan';
-    var tags = p.tags.map(function (t) { return '<span class="tag">' + esc(t) + '</span>'; }).join('');
-    return '<article class="project-card glass tilt accent-' + accent + '" data-category="' + esc(p.category) + '"' +
-      (delay ? ' style="transition-delay:' + delay + 'ms"' : '') + '>' +
-      '<div class="card-glare" aria-hidden="true"></div>' +
-      '<div class="card-top"><span class="card-index">' + String(i + 1).padStart(2, '0') + ' / ' + PROJECTS.length + '</span>' +
-      '<span class="card-cat">' + esc(p.category) + '</span></div>' +
-      '<h3>' + esc(p.title) + '</h3>' +
-      '<p class="desc">' + esc(p.summary) + '</p>' +
-      pipeRail(p) +
-      '<div class="tag-row">' + tags + '</div>' + linkRow(p) + '</article>';
-  }
-
-  function showcaseHTML(p) {
-    var accent = ACCENT[p.category] || 'cyan';
-    var tags = p.tags.map(function (t) { return '<span class="tag">' + esc(t) + '</span>'; }).join('');
-    var steps = p.pipeline.split('→').map(function (s) { return esc(s.trim()); });
-    var stepsHTML = steps.map(function (s, k) {
-      return '<li class="show-step"><span class="show-step-num">' + (k + 1) + '</span>' +
-        '<span class="show-step-body"><span class="show-step-name">' + s + '</span></span></li>';
+  document.getElementById('featured-grid').innerHTML = featured.map(function (p, i) {
+    var pipe = p.pipeline.map(function (s, j) {
+      return '<li>' + esc(s) + '</li>';
     }).join('');
-    return '<article class="project-card glass tilt project-showcase accent-' + accent + '" data-category="' + esc(p.category) + '">' +
-      '<div class="card-glare" aria-hidden="true"></div>' +
-      '<div class="show-main">' +
-      '<div class="show-flag"><span class="show-star" aria-hidden="true">★</span> Featured build</div>' +
-      '<div class="card-top"><span class="card-index">01 / ' + PROJECTS.length + '</span>' +
-      '<span class="card-cat">' + esc(p.category) + '</span></div>' +
-      '<h3>' + esc(p.title) + '</h3>' +
-      '<p class="desc">' + esc(p.summary) + '</p>' +
-      '<div class="tag-row">' + tags + '</div>' + linkRow(p) + '</div>' +
-      '<div class="show-panel">' +
-      '<div class="show-panel-head mono">' + esc(p.name) + '</div>' +
-      '<div class="show-rail-label mono">end-to-end pipeline</div>' +
-      '<ol class="show-steps">' + stepsHTML + '</ol>' +
-      '<div class="show-panel-foot mono">code · tests · helm · docs</div>' +
-      '</div></article>';
-  }
+    return '<article class="feature reveal" data-delay="' + i + '">' +
+      '<div class="feature-top"><div class="feature-kicker"><span class="cat">' + esc(p.category) + ' · Featured</span>' +
+      '<span class="mono" style="font-size:12px;color:var(--muted)">' + esc(p.name) + '</span></div>' +
+      '<h3>' + esc(p.title) + '</h3><p class="feature-summary">' + esc(p.summary) + '</p></div>' +
+      '<ol class="pipeline" aria-label="Pipeline">' + pipe + '</ol>' +
+      '<ul class="feature-points">' + (p.highlights || []).map(function (h) { return '<li>' + esc(h) + '</li>'; }).join('') + '</ul>' +
+      '<div class="stack">' + chips(p.tags) + '</div>' +
+      '<div class="feature-links-wrap"><div class="feature-links">' + links(p, 'btn btn-primary btn-sm') + '</div></div>' +
+      '</article>';
+  }).join('');
 
-  function render(filter) {
-    var visible = PROJECTS.filter(function (p) { return filter === 'all' || p.category === filter; });
-    var html = visible.map(function (p, vi) {
-      var i = PROJECTS.indexOf(p);
-      if (filter === 'all' && vi === 0) return showcaseHTML(p);
-      return cardHTML(p, i, reduceMotion ? 0 : (vi % 6) * 55);
-    }).join('');
-    grid.innerHTML = html;
-    count.textContent = 'Showing ' + visible.length + ' of ' + PROJECTS.length + ' projects — code, tests, and Helm chart for every shipped project.';
-    observeReveals();
-    initTilt();
-  }
+  var grid = document.getElementById('repo-grid');
+  grid.innerHTML = rest.map(function (p) {
+    return '<article class="repo" data-cat="' + esc(p.category) + '">' +
+      '<span class="cat">' + esc(p.category) + '</span>' +
+      '<h4>' + esc(p.title) + '</h4>' +
+      '<p>' + esc(p.summary) + '</p>' +
+      '<div class="mini-pipe">' + p.pipeline.map(esc).join(' → ') + '</div>' +
+      '<div class="stack">' + chips(p.tags) + '</div>' +
+      '<div class="repo-links">' + links(p, '') + '</div>' +
+      '</article>';
+  }).join('');
 
-  buttons.forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      buttons.forEach(function (b) { b.setAttribute('aria-pressed', 'false'); });
-      btn.setAttribute('aria-pressed', 'true');
-      render(btn.getAttribute('data-filter'));
-    });
-  });
-
-  /* ---------- Theme toggle (persisted, default dark) ---------- */
-  var toggle = document.getElementById('theme-toggle');
-  function applyTheme(t) {
-    document.documentElement.setAttribute('data-theme', t);
-    toggle.textContent = t === 'dark' ? '☀' : '☾';
-    try { localStorage.setItem('sm-theme', t); } catch (e) {}
-    if (window.__syncThreeTheme) window.__syncThreeTheme(t);
-  }
-  var saved = null;
-  try { saved = localStorage.getItem('sm-theme'); } catch (e) {}
-  applyTheme(saved || 'dark');
-  toggle.addEventListener('click', function () {
-    applyTheme(document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
-  });
-
-  /* ---------- Reveal-on-scroll (wipe + rise variants) ---------- */
-  var revealIO = null;
-  function observeReveals() {
-    var els = document.querySelectorAll('.reveal:not(.in)');
-    if (!('IntersectionObserver' in window)) {
-      els.forEach(function (el) { el.classList.add('in'); });
-      return;
-    }
-    if (revealIO) revealIO.disconnect();
-    revealIO = new IntersectionObserver(function (entries) {
-      entries.forEach(function (en) {
-        if (en.isIntersecting) { en.target.classList.add('in'); revealIO.unobserve(en.target); }
+  var filterBtns = Array.prototype.slice.call(document.querySelectorAll('.filter'));
+  var count = document.getElementById('repo-count');
+  filterBtns.forEach(function (b) {
+    var f = b.getAttribute('data-filter');
+    var n = f === 'all' ? rest.length : rest.filter(function (p) { return p.category === f; }).length;
+    if (f !== 'all' && n === 0) { b.hidden = true; return; }
+    b.insertAdjacentHTML('beforeend', '<span class="n">' + n + '</span>');
+    b.addEventListener('click', function () {
+      filterBtns.forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); });
+      var shown = 0;
+      Array.prototype.forEach.call(grid.children, function (card) {
+        var on = f === 'all' || card.getAttribute('data-cat') === f;
+        card.classList.toggle('hide', !on);
+        if (on) shown++;
       });
-    }, { threshold: 0.12 });
-    els.forEach(function (el) { revealIO.observe(el); });
-  }
+      count.textContent = 'Showing ' + shown + ' of ' + rest.length + ' — every repo ships code, tests, deployment config, and docs.';
+    });
+  });
 
-  /* Split character headings : reveal on scroll (hero handled by body.loaded) */
-  function observeSplitHeadings() {
-    var heads = document.querySelectorAll('.split-obs');
-    if (!('IntersectionObserver' in window)) {
-      Array.prototype.forEach.call(heads, function (h) { h.classList.add('in'); });
-      return;
+  /* ---------- Copy email ---------- */
+  var toast = document.getElementById('toast');
+  var toastTimer;
+  function showToast(msg) {
+    toast.textContent = msg;
+    toast.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function () { toast.classList.remove('show'); }, 2000);
+  }
+  document.getElementById('copy-email').addEventListener('click', function () {
+    var email = this.getAttribute('data-email');
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(email).then(function () { showToast('Email copied'); }, function () { showToast(email); });
+    } else {
+      showToast(email);
     }
+  });
+
+  /* ---------- Reveal + trace + active nav ---------- */
+  var trace = document.getElementById('trace');
+  var revealEls = Array.prototype.slice.call(document.querySelectorAll('.reveal'));
+  if (reduceMotion || !('IntersectionObserver' in window)) {
+    revealEls.forEach(function (el) { el.classList.add('in'); });
+    trace.classList.add('run');
+  } else {
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (en) {
         if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
       });
-    }, { threshold: 0.25 });
-    Array.prototype.forEach.call(heads, function (h) { io.observe(h); });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+    revealEls.forEach(function (el) { io.observe(el); });
+
+    new IntersectionObserver(function (entries, obs) {
+      if (entries[0].isIntersecting) { setTimeout(function () { trace.classList.add('run'); }, 350); obs.disconnect(); }
+    }, { threshold: 0.3 }).observe(trace);
   }
 
-  /* ---------- Count-up numbers in the impact band ---------- */
-  (function countUp() {
-    var nums = document.querySelectorAll('.impact-card .num[data-count]');
-    function setFinal(el) {
-      el.textContent = el.getAttribute('data-count') + el.getAttribute('data-suffix');
-    }
-    if (reduceMotion || !('IntersectionObserver' in window)) {
-      nums.forEach(setFinal);
-      return;
-    }
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (en) {
-        if (!en.isIntersecting) return;
-        var el = en.target;
-        io.unobserve(el);
-        var target = parseInt(el.getAttribute('data-count'), 10);
-        var suffix = el.getAttribute('data-suffix');
-        var t0 = null, dur = 1400;
-        function frame(t) {
-          if (t0 === null) t0 = t;
-          var k = Math.min(1, (t - t0) / dur);
-          var eased = 1 - Math.pow(1 - k, 3);
-          el.textContent = Math.round(target * eased) + suffix;
-          if (k < 1) requestAnimationFrame(frame);
-        }
-        requestAnimationFrame(frame);
-      });
-    }, { threshold: 0.4 });
-    nums.forEach(function (el) { io.observe(el); });
-  })();
-
-  /* ---------- Telemetry status cycler (decorative system motif, metric-free) ---------- */
-  (function telemetry() {
-    var line = document.getElementById('telemetry-line');
-    if (!line) return;
-    var lines = [
-      'build ············ passing',
-      'tests ············ green',
-      'deploy ··········· synced',
-      'monitor ·········· live'
-    ];
-    var i = 0;
-    if (reduceMotion) { line.textContent = lines[0]; return; }
-    setInterval(function () {
-      i = (i + 1) % lines.length;
-      line.style.opacity = '0';
-      setTimeout(function () {
-        line.textContent = lines[i];
-        line.style.opacity = '1';
-      }, 220);
-    }, 2600);
-  })();
-
-  /* ---------- 3D tilt + glare on project cards ---------- */
-  function initTilt() {
-    if (reduceMotion || !finePointer) return;
-    var cards = document.querySelectorAll('.project-card.tilt');
-    cards.forEach(function (card) {
-      var glare = card.querySelector('.card-glare');
-      card.addEventListener('mousemove', function (e) {
-        var r = card.getBoundingClientRect();
-        var px = (e.clientX - r.left) / r.width - 0.5;
-        var py = (e.clientY - r.top) / r.height - 0.5;
-        card.style.transform = 'perspective(1100px) rotateX(' + (-py * 7).toFixed(2) + 'deg) rotateY(' + (px * 9).toFixed(2) + 'deg) translateY(-8px)';
-        if (glare) {
-          glare.style.opacity = '1';
-          glare.style.background = 'radial-gradient(circle at ' + ((px + 0.5) * 100).toFixed(1) + '% ' + ((py + 0.5) * 100).toFixed(1) + '%, rgba(255,255,255,.14), transparent 55%)';
-        }
-      });
-      card.addEventListener('mouseleave', function () {
-        card.style.transform = '';
-        if (glare) glare.style.opacity = '0';
-      });
-    });
-  }
-
-  /* ---------- Magnetic CTA buttons ---------- */
-  (function magnetic() {
-    if (reduceMotion || !finePointer) return;
-    var btns = document.querySelectorAll('.magnetic');
-    btns.forEach(function (btn) {
-      btn.addEventListener('mousemove', function (e) {
-        var r = btn.getBoundingClientRect();
-        var dx = e.clientX - (r.left + r.width / 2);
-        var dy = e.clientY - (r.top + r.height / 2);
-        btn.style.transform = 'translate(' + (dx * 0.14).toFixed(1) + 'px,' + (dy * 0.2).toFixed(1) + 'px)';
-      });
-      btn.addEventListener('mouseleave', function () { btn.style.transform = ''; });
-    });
-  })();
-
-  /* ---------- Mobile menu ---------- */
-  (function mobileMenu() {
-    var toggle = document.getElementById('nav-toggle');
-    var menu = document.getElementById('mobile-menu');
-    var scrim = document.getElementById('nav-scrim');
-    if (!toggle || !menu) return;
-    function setOpen(open) {
-      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-      toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
-      menu.classList.toggle('open', open);
-      if (scrim) scrim.classList.toggle('on', open);
-      document.body.style.overflow = open ? 'hidden' : '';
-    }
-    toggle.addEventListener('click', function () {
-      setOpen(toggle.getAttribute('aria-expanded') !== 'true');
-    });
-    if (scrim) scrim.addEventListener('click', function () { setOpen(false); });
-    menu.addEventListener('click', function (e) {
-      if (e.target.closest('a')) setOpen(false);
-    });
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape') setOpen(false);
-    });
-  })();
-
-  /* ---------- Cursor-following ambient glow inside the hero ---------- */
-  (function cursorGlow() {
-    var glow = document.getElementById('cursor-glow');
-    var hero = document.querySelector('.hero');
-    if (!glow || !hero || reduceMotion || !finePointer) return;
-    var x = 0, y = 0, tx = 0, ty = 0, raf = null;
-    function loop() {
-      x += (tx - x) * 0.12; y += (ty - y) * 0.12;
-      glow.style.transform = 'translate(' + x.toFixed(1) + 'px,' + y.toFixed(1) + 'px)';
-      raf = requestAnimationFrame(loop);
-    }
-    hero.addEventListener('mousemove', function (e) {
-      var r = hero.getBoundingClientRect();
-      tx = e.clientX - r.left; ty = e.clientY - r.top;
-      if (!raf) loop();
-    });
-    hero.addEventListener('mouseleave', function () {
-      if (raf) { cancelAnimationFrame(raf); raf = null; }
-      glow.style.opacity = '0';
-    });
-    hero.addEventListener('mouseenter', function () { glow.style.opacity = '1'; });
-  })();
-
-  /* ---------- Active nav highlighting ---------- */
-  (function activeNav() {
-    var links = Array.prototype.slice.call(document.querySelectorAll('.nav-links a'));
+  if ('IntersectionObserver' in window) {
+    var navLinks = Array.prototype.slice.call(document.querySelectorAll('.nav-links a'));
     var map = {};
-    links.forEach(function (a) { map[a.getAttribute('href').slice(1)] = a; });
-    if (!('IntersectionObserver' in window)) return;
-    var io = new IntersectionObserver(function (entries) {
+    navLinks.forEach(function (a) { map[a.getAttribute('href').slice(1)] = a; });
+    var secIO = new IntersectionObserver(function (entries) {
       entries.forEach(function (en) {
-        var a = map[en.target.id];
-        if (!a) return;
-        if (en.isIntersecting) {
-          links.forEach(function (l) { l.classList.remove('active'); });
-          a.classList.add('active');
+        if (en.isIntersecting && map[en.target.id]) {
+          navLinks.forEach(function (a) { a.classList.remove('active'); });
+          map[en.target.id].classList.add('active');
         }
       });
-    }, { rootMargin: '-40% 0px -55% 0px' });
-    Object.keys(map).forEach(function (id) {
-      var s = document.getElementById(id);
-      if (s) io.observe(s);
-    });
-  })();
-
-  /* ---------- Shared scroll state (progress bar + camera dolly) ---------- */
-  var scrollState = { y: 0, heroK: 0 };
-  window.__heroScroll = scrollState;
-  (function scrollFX() {
-    var bar = document.getElementById('scroll-progress');
-    var hero = document.querySelector('.hero');
-    var ticking = false;
-    function update() {
-      ticking = false;
-      var y = window.scrollY || window.pageYOffset;
-      var max = document.documentElement.scrollHeight - window.innerHeight;
-      if (bar && max > 0) bar.style.transform = 'scaleX(' + (y / max).toFixed(4) + ')';
-      scrollState.y = y;
-      if (hero) {
-        var h = hero.offsetHeight || 1;
-        scrollState.heroK = Math.max(0, Math.min(1, y / h));
-      }
-    }
-    window.addEventListener('scroll', function () {
-      if (!ticking) { ticking = true; requestAnimationFrame(update); }
-    }, { passive: true });
-    update();
-  })();
-
-  /* ---------- WebGL availability probe ---------- */
-  function webglOK() {
-    try {
-      var c = document.createElement('canvas');
-      return !!(window.WebGLRenderingContext && (c.getContext('webgl') || c.getContext('experimental-webgl')));
-    } catch (e) { return false; }
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    Object.keys(map).forEach(function (id) { var s = document.getElementById(id); if (s) secIO.observe(s); });
   }
-
-  /* ---------- 3D hero : particle neural cosmos (Three.js r149) ---------- */
-  var threeAPI = null;
-  var linksMat = null;
-  function initThree() {
-    var canvas = document.getElementById('webgl-canvas');
-    var hero = document.querySelector('.hero');
-    var renderer;
-    try {
-      renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true, powerPreference: 'high-performance' });
-    } catch (e) { return false; }
-
-    var isSmall = Math.min(window.innerWidth || 0, window.innerHeight || 0) < 640;
-    var isMobile = (window.innerWidth || 0) < 760;
-    var N_CORE = isSmall ? 1300 : 2400;
-    var N_SHELL = isSmall ? 450 : 950;
-    var N_RING = isSmall ? 320 : 680;
-
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, isSmall ? 1.5 : 1.75));
-    var scene = new THREE.Scene();
-    scene.fog = new THREE.FogExp2(0x05070f, 0.05);
-    var camera = new THREE.PerspectiveCamera(55, 1, 0.1, 120);
-    camera.position.set(0, 0.5, 8.2);
-
-    function fibSphere(n, r) {
-      var pos = new Float32Array(n * 3);
-      var golden = Math.PI * (3 - Math.sqrt(5));
-      for (var i = 0; i < n; i++) {
-        var y = 1 - (i / (n - 1)) * 2;
-        var rad = Math.sqrt(1 - y * y);
-        var th = golden * i;
-        pos[i * 3] = Math.cos(th) * rad * r;
-        pos[i * 3 + 1] = y * r;
-        pos[i * 3 + 2] = Math.sin(th) * rad * r;
-      }
-      return pos;
-    }
-
-    var world = new THREE.Group();
-    scene.add(world);
-
-    /* Core : breathing particle lattice */
-    var coreBase = fibSphere(N_CORE, 2.15);
-    var coreGeo = new THREE.BufferGeometry();
-    coreGeo.setAttribute('position', new THREE.BufferAttribute(coreBase.slice(), 3));
-    var coreMat = new THREE.PointsMaterial({ color: 0x67e8f9, size: 0.045, transparent: true, opacity: 0.9, blending: THREE.AdditiveBlending, depthWrite: false, sizeAttenuation: true });
-    var core = new THREE.Points(coreGeo, coreMat);
-    world.add(core);
-
-    /* Neural links between nearby core particles (computed once) */
-    (function buildLinks() {
-      var maxSeg = isSmall ? 380 : 750;
-      var arr = new Float32Array(maxSeg * 6);
-      var n = 0;
-      var thr2 = 0.55 * 0.55;
-      outer:
-      for (var i = 0; i < N_CORE && n < maxSeg; i += 2) {
-        var ix = i * 3;
-        for (var j = i + 1; j < N_CORE && n < maxSeg; j += 4) {
-          var jx = j * 3;
-          var dx = coreBase[ix] - coreBase[jx], dy = coreBase[ix + 1] - coreBase[jx + 1], dz = coreBase[ix + 2] - coreBase[jx + 2];
-          if (dx * dx + dy * dy + dz * dz < thr2) {
-            arr[n * 6] = coreBase[ix]; arr[n * 6 + 1] = coreBase[ix + 1]; arr[n * 6 + 2] = coreBase[ix + 2];
-            arr[n * 6 + 3] = coreBase[jx]; arr[n * 6 + 4] = coreBase[jx + 1]; arr[n * 6 + 5] = coreBase[jx + 2];
-            n++;
-            if (n >= maxSeg) break outer;
-          }
-        }
-      }
-      var g = new THREE.BufferGeometry();
-      g.setAttribute('position', new THREE.BufferAttribute(arr.subarray(0, n * 6), 3));
-      var m = new THREE.LineBasicMaterial({ color: 0x38bdf8, transparent: true, opacity: 0.16, blending: THREE.AdditiveBlending, depthWrite: false });
-      var lines = new THREE.LineSegments(g, m);
-      lines.name = 'links';
-      world.add(lines);
-      linksMat = m;
-    })();
-
-    /* Shell : outer violet haze, counter-rotating */
-    var shellGeo = new THREE.BufferGeometry();
-    shellGeo.setAttribute('position', new THREE.BufferAttribute(fibSphere(N_SHELL, 3.55), 3));
-    var shellMat = new THREE.PointsMaterial({ color: 0xa78bfa, size: 0.05, transparent: true, opacity: 0.55, blending: THREE.AdditiveBlending, depthWrite: false });
-    var shell = new THREE.Points(shellGeo, shellMat);
-    world.add(shell);
-
-    /* Ring : tilted emerald orbit */
-    var ringGeo = new THREE.BufferGeometry();
-    (function buildRing() {
-      var pos = new Float32Array(N_RING * 3);
-      var R = 4.7, tube = 0.5;
-      for (var i = 0; i < N_RING; i++) {
-        var a = (i / N_RING) * Math.PI * 2;
-        var rr = R + (Math.random() - 0.5) * tube * 2;
-        pos[i * 3] = Math.cos(a) * rr;
-        pos[i * 3 + 1] = (Math.random() - 0.5) * tube * 2;
-        pos[i * 3 + 2] = Math.sin(a) * rr;
-      }
-      ringGeo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
-    })();
-    var ringMat = new THREE.PointsMaterial({ color: 0x34d399, size: 0.04, transparent: true, opacity: 0.7, blending: THREE.AdditiveBlending, depthWrite: false });
-    var ring = new THREE.Points(ringGeo, ringMat);
-    ring.rotation.x = 1.15;
-    ring.rotation.z = 0.25;
-    world.add(ring);
-
-    /* On phones the cosmos is centered above the copy; on larger screens it sits right. */
-    var baseX = isMobile ? 0 : 2.4;
-    var baseY = isMobile ? 1.15 : 0;
-    world.position.x = baseX;
-    world.position.y = baseY;
-    world.rotation.z = 0.12;
-
-    /* Mouse parallax targets */
-    var mx = 0, my = 0, tmx = 0, tmy = 0;
-    if (finePointer) {
-      hero.addEventListener('mousemove', function (e) {
-        var r = hero.getBoundingClientRect();
-        tmx = ((e.clientX - r.left) / r.width - 0.5) * 2;
-        tmy = ((e.clientY - r.top) / r.height - 0.5) * 2;
-      });
-      hero.addEventListener('mouseleave', function () { tmx = 0; tmy = 0; });
-    }
-
-    function resize() {
-      var r = hero.getBoundingClientRect();
-      var w = Math.max(1, Math.floor(r.width)), h = Math.max(1, Math.floor(r.height));
-      renderer.setSize(w, h, false);
-      camera.aspect = w / h;
-      camera.updateProjectionMatrix();
-    }
-    window.addEventListener('resize', resize);
-    resize();
-
-    var heroVisible = true;
-    if ('IntersectionObserver' in window) {
-      new IntersectionObserver(function (entries) {
-        heroVisible = entries[0].isIntersecting;
-      }, { threshold: 0 }).observe(hero);
-    }
-    var running = true;
-    document.addEventListener('visibilitychange', function () {
-      running = !document.hidden;
-      if (running) requestAnimationFrame(tick);
-    });
-
-    var corePos = coreGeo.attributes.position;
-    var t = Math.random() * 100;
-    function tick() {
-      if (!running) return;
-      if (heroVisible && !document.hidden) {
-        t += 0.008;
-        /* breathe : cheap layered-sine displacement along the normal */
-        for (var i = 0; i < N_CORE; i++) {
-          var ix = i * 3;
-          var bx = coreBase[ix], by = coreBase[ix + 1], bz = coreBase[ix + 2];
-          var wob = 1 + 0.055 * Math.sin(t * 1.4 + by * 2.2) * Math.sin(t * 0.9 + bx * 1.6 + bz * 1.1);
-          corePos.array[ix] = bx * wob;
-          corePos.array[ix + 1] = by * wob;
-          corePos.array[ix + 2] = bz * wob;
-        }
-        corePos.needsUpdate = true;
-        world.rotation.y += 0.0016;
-        shell.rotation.y -= 0.0009;
-        shell.rotation.x += 0.0004;
-        ring.rotation.z += 0.0011;
-        mx += (tmx - mx) * 0.045;
-        my += (tmy - my) * 0.045;
-        world.rotation.x = my * 0.22;
-        world.rotation.y += mx * 0.0012;
-        var k = scrollState.heroK;
-        camera.position.z = 8.2 + k * 3.4;
-        camera.position.y = 0.5 - k * 1.6;
-        world.position.y = baseY + k * 2.2;
-        world.position.x = baseX - k * (isMobile ? 0 : 1.2);
-        camera.lookAt(world.position.x * 0.4, 0, 0);
-        renderer.render(scene, camera);
-      }
-      requestAnimationFrame(tick);
-    }
-
-    threeAPI = {
-      setTheme: function (theme) {
-        var light = theme === 'light';
-        coreMat.color.setHex(light ? 0x0284c7 : 0x67e8f9);
-        coreMat.opacity = light ? 0.75 : 0.9;
-        linksMat.color.setHex(light ? 0x0369a1 : 0x38bdf8);
-        linksMat.opacity = light ? 0.22 : 0.16;
-        shellMat.color.setHex(light ? 0x7c3aed : 0xa78bfa);
-        shellMat.opacity = light ? 0.4 : 0.55;
-        ringMat.color.setHex(light ? 0x059669 : 0x34d399);
-      }
-    };
-    window.__syncThreeTheme = function (t) { if (threeAPI) threeAPI.setTheme(t); };
-    threeAPI.setTheme(document.documentElement.getAttribute('data-theme') || 'dark');
-    requestAnimationFrame(tick);
-    return true;
-  }
-
-  /* ---------- 2D fallback : classic neural net (also used static under reduced motion) ---------- */
-  function initCanvas2D(animated) {
-    var canvas = document.getElementById('net-canvas');
-    canvas.classList.add('on');
-    if (!canvas || !canvas.getContext) return;
-    var ctx = canvas.getContext('2d');
-    var w = 0, h = 0, nodes = [], running = true, dpr = 1;
-
-    function resize() {
-      var r = canvas.parentElement.getBoundingClientRect();
-      dpr = Math.min(window.devicePixelRatio || 1, 2);
-      w = Math.max(1, Math.floor(r.width));
-      h = Math.max(1, Math.floor(r.height));
-      canvas.width = w * dpr;
-      canvas.height = h * dpr;
-      canvas.style.width = w + 'px';
-      canvas.style.height = h + 'px';
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      var n = Math.min(110, Math.floor(w * h / 16000));
-      nodes = [];
-      for (var i = 0; i < n; i++) {
-        nodes.push({
-          x: Math.random() * w, y: Math.random() * h,
-          vx: (Math.random() - 0.5) * 0.35, vy: (Math.random() - 0.5) * 0.35,
-          r: 1 + Math.random() * 1.6
-        });
-      }
-    }
-
-    function draw() {
-      ctx.clearRect(0, 0, w, h);
-      var i, j, a, b, dx, dy, d;
-      ctx.lineWidth = 1;
-      for (i = 0; i < nodes.length; i++) {
-        for (j = i + 1; j < nodes.length; j++) {
-          a = nodes[i]; b = nodes[j];
-          dx = a.x - b.x; dy = a.y - b.y;
-          d = Math.sqrt(dx * dx + dy * dy);
-          if (d < 130) {
-            ctx.strokeStyle = 'rgba(56,189,248,' + (0.14 * (1 - d / 130)).toFixed(3) + ')';
-            ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
-          }
-        }
-      }
-      for (i = 0; i < nodes.length; i++) {
-        a = nodes[i];
-        ctx.fillStyle = 'rgba(167,139,250,0.55)';
-        ctx.beginPath(); ctx.arc(a.x, a.y, a.r, 0, 6.2832); ctx.fill();
-      }
-    }
-
-    function step() {
-      if (!running) return;
-      for (var i = 0; i < nodes.length; i++) {
-        var a = nodes[i];
-        a.x += a.vx; a.y += a.vy;
-        if (a.x < 0 || a.x > w) a.vx *= -1;
-        if (a.y < 0 || a.y > h) a.vy *= -1;
-      }
-      draw();
-      requestAnimationFrame(step);
-    }
-
-    window.addEventListener('resize', resize);
-    document.addEventListener('visibilitychange', function () {
-      if (!animated) return;
-      running = !document.hidden;
-      if (running) requestAnimationFrame(step);
-    });
-    resize();
-    if (animated) { requestAnimationFrame(step); }
-    else { draw(); }
-  }
-
-  /* ---------- Boot the hero backdrop : 3D -> animated 2D -> static 2D ---------- */
-  (function bootHero() {
-    var webgl = document.getElementById('webgl-canvas');
-    if (reduceMotion) {
-      webgl.style.display = 'none';
-      initCanvas2D(false);
-      return;
-    }
-    var ok = false;
-    if (window.THREE && webglOK()) {
-      try { ok = initThree(); } catch (e) { ok = false; }
-    }
-    if (ok) {
-      webgl.classList.add('on');
-    } else {
-      webgl.style.display = 'none';
-      initCanvas2D(true);
-    }
-  })();
-
-  render('all');
-  observeReveals();
-  observeSplitHeadings();
-  document.body.classList.add('loaded');
 })();
 </script>
 </body>
