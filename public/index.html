@@ -309,32 +309,62 @@
   <div class="container">
     <div class="section-head reveal">
       <span class="kicker">03 · Projects</span>
-      <h2 id="projects-title">Systems you can <span class="serif grad-text">read, run, and review.</span></h2>
-      <p>Independent repos with code, tests, CI, and Helm charts — built on my own time to show how I engineer, end to end.</p>
+      <h2 id="projects-title">Every project, <span class="serif grad-text">drawn end to end.</span></h2>
+      <p>Pick a system to see its full architecture — data, model, serving, and delivery. Press <b>Play flow</b> to walk a request through it, or click any stage to inspect it.</p>
     </div>
 
-    <div class="featured" id="featured-grid"></div>
-
-    <div class="repo-bar">
-      <div>
-        <h3>More repositories</h3>
-        <p id="repo-count">Every repo ships code, tests, deployment config, and docs.</p>
+    <div class="bp reveal" id="bp">
+      <div class="bp-rail">
+        <div class="filters" role="group" aria-label="Filter projects by category">
+          <button class="filter" type="button" data-filter="all" aria-pressed="true">All</button>
+          <button class="filter" type="button" data-filter="Agents" aria-pressed="false">Agents</button>
+          <button class="filter" type="button" data-filter="Generative AI" aria-pressed="false">GenAI</button>
+          <button class="filter" type="button" data-filter="Core ML" aria-pressed="false">Core ML</button>
+          <button class="filter" type="button" data-filter="Fine-tuning" aria-pressed="false">Fine-tuning</button>
+          <button class="filter" type="button" data-filter="Vision &amp; Search" aria-pressed="false">Vision</button>
+        </div>
+        <div class="bp-list" id="bp-list" role="tablist" aria-label="Projects" aria-orientation="vertical"></div>
       </div>
-      <div class="filters" role="group" aria-label="Filter repositories by category">
-        <button class="filter" type="button" data-filter="all" aria-pressed="true">All</button>
-        <button class="filter" type="button" data-filter="Generative AI" aria-pressed="false">GenAI</button>
-        <button class="filter" type="button" data-filter="Agents" aria-pressed="false">Agents</button>
-        <button class="filter" type="button" data-filter="Core ML" aria-pressed="false">Core ML</button>
-        <button class="filter" type="button" data-filter="Fine-tuning" aria-pressed="false">Fine-tuning</button>
-        <button class="filter" type="button" data-filter="Vision &amp; Search" aria-pressed="false">Vision</button>
+
+      <div class="bp-main">
+        <div class="bp-inner" id="bp-panel" role="tabpanel" aria-labelledby="bp-title">
+          <div class="bp-head">
+            <div>
+              <span class="cat" id="bp-cat"></span>
+              <h3 id="bp-title"></h3>
+              <p id="bp-summary"></p>
+            </div>
+            <div class="bp-links" id="bp-links"></div>
+          </div>
+          <div class="bp-canvas">
+            <svg class="bp-svg" id="bp-svg" role="img" aria-label="Architecture diagram"></svg>
+            <ol class="bp-steps" id="bp-steps"></ol>
+          </div>
+          <div class="bp-bar">
+            <div class="bp-ctrl">
+              <button class="bp-play" type="button" id="bp-play"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15l13-7.5z"/></svg><span>Play flow</span></button>
+              <button class="icon-btn" type="button" id="bp-prev" aria-label="Previous stage"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button>
+              <button class="icon-btn" type="button" id="bp-next" aria-label="Next stage"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button>
+            </div>
+            <div class="bp-progress" aria-hidden="true"><i id="bp-progress"></i></div>
+            <span class="bp-count" id="bp-count"></span>
+          </div>
+          <div class="bp-detail">
+            <div class="bp-insp" id="bp-insp" aria-live="polite"></div>
+            <div class="bp-proof">
+              <h5>Verified in the repo</h5>
+              <ul id="bp-proof"></ul>
+              <div class="stack" id="bp-tags"></div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="repo-grid" id="repo-grid"></div>
-    <noscript><p class="note">Project cards need JavaScript. Browse every repository on <a href="https://github.com/SaiMudunuri04">GitHub</a>.</p></noscript>
+    <noscript><p class="note">The blueprint explorer needs JavaScript. Browse every repository on <a href="https://github.com/SaiMudunuri04">GitHub</a>.</p></noscript>
 
     <p class="note">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/></svg>
-      <span><strong>Independent repos.</strong> Personal reference implementations, kept separate from employer work. Cloud training and Kubernetes deployment need your own account, data, and cluster; they don't claim live production traffic.</span>
+      <span><strong>Independent repos.</strong> Personal reference implementations, kept separate from employer work. "Verified" items come from each repo's own tests and README; they don't claim live production traffic.</span>
     </p>
   </div>
 </section>
@@ -475,52 +505,159 @@
     $$('.marquee-item', track).forEach(function (n) { var c = n.cloneNode(true); c.setAttribute('aria-hidden', 'true'); track.appendChild(c); });
   }
 
-  /* ---------- Projects ---------- */
+  /* ---------- Projects: blueprint explorer ---------- */
   function esc(s) { return String(s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
   var ext = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>';
   var data = (typeof PROJECTS !== 'undefined' && Array.isArray(PROJECTS)) ? PROJECTS : [];
-  var featured = data.filter(function (p) { return p.featured; });
-  var rest = data.filter(function (p) { return !p.featured; });
+  var SVGNS = 'http://www.w3.org/2000/svg';
+  var bpList = $('#bp-list'), bpSvg = $('#bp-svg'), bpSteps = $('#bp-steps'), bpInsp = $('#bp-insp');
+  var playBtn = $('#bp-play'), cur = null, active = -1, timer = null, pulseRaf = null;
+  var W = 1000, NW = 178, NH = 60, LANE_H = 116, TOP = 8, LEFT = 30;
 
-  $('#featured-grid').innerHTML = featured.map(function (p, i) {
-    var steps = p.pipeline.map(function (s, j) { return '<div class="flow-step"><i>' + String(j + 1).padStart(2, '0') + '</i><span>' + esc(s) + '</span></div>'; }).join('');
-    var links = p.status === 'live'
-      ? '<a class="btn btn-primary btn-sm" href="' + esc(p.repo) + '" target="_blank" rel="noopener">Repository ' + ext + '</a>' +
-        (p.helm ? '<a class="btn btn-secondary btn-sm" href="' + esc(p.helm) + '" target="_blank" rel="noopener">Helm chart ' + ext + '</a>' : '')
+  function el(tag, attrs, parent) { var n = document.createElementNS(SVGNS, tag); for (var k in attrs) n.setAttribute(k, attrs[k]); if (parent) parent.appendChild(n); return n; }
+  function pos(n) { var x = LEFT + n.col * ((W - 2 * LEFT - NW) / 4); var y = TOP + n.lane * LANE_H + (LANE_H - 16 - NH) / 2 + 16; return { x: x, y: y }; }
+  function edgePath(a, b) {
+    var p = pos(a), q = pos(b), sx, sy, ex, ey, c1, c2;
+    if (b.col > a.col) { sx = p.x + NW; sy = p.y + NH / 2; ex = q.x; ey = q.y + NH / 2; var dx = (ex - sx) / 2; c1 = (sx + dx) + ' ' + sy; c2 = (ex - dx) + ' ' + ey; }
+    else if (b.col < a.col) { sx = p.x; sy = p.y + NH / 2; ex = q.x + NW; ey = q.y + NH / 2; var dx2 = (sx - ex) / 2; c1 = (sx - dx2) + ' ' + sy; c2 = (ex + dx2) + ' ' + ey; }
+    else { var down = b.lane > a.lane; sx = p.x + NW / 2; sy = down ? p.y + NH : p.y; ex = q.x + NW / 2; ey = down ? q.y : q.y + NH; var dy = (ey - sy) / 2; c1 = sx + ' ' + (sy + dy); c2 = ex + ' ' + (ey - dy); }
+    return 'M' + sx + ' ' + sy + ' C' + c1 + ' ' + c2 + ' ' + ex + ' ' + ey;
+  }
+
+  function renderList(filter) {
+    bpList.innerHTML = '';
+    data.forEach(function (p, i) {
+      var b = document.createElement('button');
+      b.type = 'button'; b.className = 'bp-item'; b.setAttribute('role', 'tab'); b.setAttribute('data-i', i);
+      b.setAttribute('aria-selected', String(p === cur)); b.setAttribute('aria-controls', 'bp-panel');
+      if (filter && filter !== 'all' && p.category !== filter) b.classList.add('hide');
+      b.innerHTML = '<span class="num">' + String(i + 1).padStart(2, '0') + '</span><span class="nm">' + esc(p.title) + '</span><span class="ct">' + esc(p.category) + '</span>';
+      b.addEventListener('click', function () { select(i); });
+      bpList.appendChild(b);
+    });
+  }
+
+  function renderDiagram(p) {
+    var f = p.flow, H = TOP + f.lanes.length * LANE_H + 8;
+    bpSvg.innerHTML = ''; bpSvg.setAttribute('viewBox', '0 0 ' + W + ' ' + H);
+    bpSvg.setAttribute('aria-label', p.title + ' architecture: ' + f.nodes.map(function (n) { return n.t; }).join(', '));
+    var defs = el('defs', {}, bpSvg);
+    var g = el('linearGradient', { id: 'bp-grad', x1: '0', y1: '0', x2: String(W), y2: '0', gradientUnits: 'userSpaceOnUse' }, defs);
+    el('stop', { offset: '0', 'stop-color': '#a78bfa' }, g); el('stop', { offset: '.55', 'stop-color': '#22d3ee' }, g); el('stop', { offset: '1', 'stop-color': '#34d399' }, g);
+    var h = el('radialGradient', { id: 'bp-halo' }, defs);
+    el('stop', { offset: '0', 'stop-color': '#8b5cf6', 'stop-opacity': '.45' }, h); el('stop', { offset: '1', 'stop-color': '#8b5cf6', 'stop-opacity': '0' }, h);
+    f.lanes.forEach(function (name, li) {
+      var lg = el('g', { class: 'lane' }, bpSvg);
+      el('rect', { x: 4, y: TOP + li * LANE_H + 4, width: W - 8, height: LANE_H - 8, rx: 16 }, lg);
+      var t = el('text', { x: 20, y: TOP + li * LANE_H + 24 }, lg); t.textContent = name;
+    });
+    var byId = {}; f.nodes.forEach(function (n) { byId[n.id] = n; });
+    var eg = el('g', {}, bpSvg);
+    f.edges.forEach(function (e, ei) {
+      var d = edgePath(byId[e[0]], byId[e[1]]);
+      el('path', { class: 'edge', d: d }, eg);
+      el('path', { class: 'flow', d: d, id: 'bp-e' + ei, 'data-to': e[1], 'data-from': e[0] }, eg);
+    });
+    f.nodes.forEach(function (n, ni) {
+      var q = pos(n);
+      var ng = el('g', { class: 'node', tabindex: '0', role: 'button', 'data-n': ni, 'aria-label': 'Stage ' + (ni + 1) + ': ' + n.t }, bpSvg);
+      el('ellipse', { class: 'halo', cx: q.x + NW / 2, cy: q.y + NH / 2, rx: NW * 0.75, ry: NH * 1.1 }, ng);
+      el('rect', { class: 'box', x: q.x, y: q.y, width: NW, height: NH, rx: 13 }, ng);
+      el('rect', { x: q.x + 12, y: q.y + 12, width: 6, height: 6, rx: 2, class: '', fill: ['#a78bfa', '#22d3ee', '#34d399'][n.lane % 3] }, ng);
+      var tt = el('text', { class: 't', x: q.x + 26, y: q.y + 24 }, ng); tt.textContent = n.t;
+      var ts = el('text', { class: 's', x: q.x + 14, y: q.y + 45 }, ng); ts.textContent = n.s;
+      ng.addEventListener('click', function () { stop(); setActive(ni, true); });
+      ng.addEventListener('keydown', function (ev) { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); stop(); setActive(ni, true); } });
+    });
+    el('circle', { class: 'pulse', id: 'bp-pulse', r: 5, cx: -20, cy: -20 }, bpSvg);
+  }
+
+  function renderSteps(p) {
+    bpSteps.innerHTML = p.flow.nodes.map(function (n, i) {
+      return '<li><button class="bp-step" type="button" data-n="' + i + '"><span class="k">' + String(i + 1).padStart(2, '0') + '</span><span class="t">' + esc(n.t) + '</span><span class="s">' + esc(n.s) + ' · ' + esc(p.flow.lanes[n.lane]) + '</span></button></li>';
+    }).join('');
+    $$('.bp-step', bpSteps).forEach(function (b) { b.addEventListener('click', function () { stop(); setActive(+b.getAttribute('data-n'), true); }); });
+  }
+
+  function animatePulse(n) {
+    cancelAnimationFrame(pulseRaf);
+    var pulse = $('#bp-pulse'); if (!pulse) return;
+    var path = $$('.flow', bpSvg).filter(function (e) { return e.getAttribute('data-to') === cur.flow.nodes[n].id; })[0];
+    if (!path || reduce) { pulse.setAttribute('cx', -20); return; }
+    var len = path.getTotalLength(), t0 = performance.now(), dur = 700;
+    (function step(t) {
+      var k = Math.min(1, (t - t0) / dur), pt = path.getPointAtLength(len * (1 - Math.pow(1 - k, 3)));
+      pulse.setAttribute('cx', pt.x); pulse.setAttribute('cy', pt.y);
+      if (k < 1) pulseRaf = requestAnimationFrame(step); else setTimeout(function () { pulse.setAttribute('cx', -20); }, 200);
+    })(t0);
+  }
+
+  function setActive(n, fromUser) {
+    var nodes = cur.flow.nodes; active = Math.max(0, Math.min(nodes.length - 1, n));
+    var node = nodes[active];
+    $$('.node', bpSvg).forEach(function (g, i) { g.classList.toggle('active', i === active); g.classList.toggle('done', i < active); });
+    $$('.flow', bpSvg).forEach(function (e) { e.classList.toggle('lit', e.getAttribute('data-to') === node.id || e.getAttribute('data-from') === node.id); });
+    $$('.bp-step', bpSteps).forEach(function (b, i) { b.classList.toggle('active', i === active); b.classList.toggle('done', i < active); });
+    bpInsp.innerHTML = '<span class="bp-insp-lane"><span class="lane-dot lane-' + (node.lane % 3) + '"></span>' + esc(cur.flow.lanes[node.lane]) + ' · stage ' + (active + 1) + '</span>' +
+      '<h4>' + esc(node.t) + '</h4><div class="sub">' + esc(node.s) + '</div><p>' + esc(node.d) + '</p>';
+    $('#bp-count').textContent = 'Stage ' + (active + 1) + ' / ' + nodes.length;
+    $('#bp-progress').style.width = ((active + 1) / nodes.length * 100) + '%';
+    if (!fromUser || timer) animatePulse(active);
+  }
+
+  function stop() { clearInterval(timer); timer = null; playBtn.querySelector('span').textContent = 'Play flow'; }
+  function play() {
+    if (timer) { stop(); return; }
+    playBtn.querySelector('span').textContent = 'Pause';
+    setActive(0); animatePulse(0);
+    timer = setInterval(function () {
+      if (active >= cur.flow.nodes.length - 1) { stop(); return; }
+      setActive(active + 1); animatePulse(active);
+    }, 1500);
+  }
+
+  function select(i) {
+    stop(); cur = data[i];
+    $$('.bp-item', bpList).forEach(function (b) { b.setAttribute('aria-selected', String(+b.getAttribute('data-i') === i)); });
+    var selItem = $('.bp-item[data-i="' + i + '"]', bpList);
+    if (selItem && bpList.scrollWidth > bpList.clientWidth) bpList.scrollTo({ left: Math.max(0, selItem.offsetLeft - bpList.offsetLeft - 8), behavior: reduce ? 'auto' : 'smooth' });
+    $('#bp-cat').textContent = cur.category;
+    $('#bp-title').textContent = cur.title;
+    $('#bp-summary').textContent = cur.summary;
+    $('#bp-links').innerHTML = cur.status === 'live'
+      ? '<a class="btn btn-primary btn-sm" href="' + esc(cur.repo) + '" target="_blank" rel="noopener">Repository ' + ext + '</a>' +
+        (cur.helm ? '<a class="btn btn-secondary btn-sm" href="' + esc(cur.helm) + '" target="_blank" rel="noopener">Helm chart ' + ext + '</a>' : '')
       : '<span class="chip">In progress</span>';
-    return '<article class="spot feature reveal' + (i ? ' d1' : '') + '">' +
-      '<div class="feature-visual" aria-hidden="true"><div class="flow-line">' + steps + '</div></div>' +
-      '<div class="feature-body">' +
-        '<div class="feature-top"><span class="cat">' + esc(p.category) + ' · Featured</span><span class="repo-name">' + esc(p.name) + '</span></div>' +
-        '<h3>' + esc(p.title) + '</h3><p class="feature-summary">' + esc(p.summary) + '</p>' +
-        '<ul class="feature-points">' + (p.highlights || []).map(function (h) { return '<li>' + esc(h) + '</li>'; }).join('') + '</ul>' +
-        '<div class="stack">' + p.tags.map(function (t) { return '<span class="chip">' + esc(t) + '</span>'; }).join('') + '</div>' +
-        '<div class="feature-links">' + links + '</div>' +
-      '</div></article>';
-  }).join('');
+    $('#bp-proof').innerHTML = (cur.proof || []).map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('');
+    $('#bp-tags').innerHTML = cur.tags.map(function (t) { return '<span class="chip">' + esc(t) + '</span>'; }).join('');
+    renderDiagram(cur); renderSteps(cur); setActive(0, true);
+  }
 
-  var grid = $('#repo-grid');
-  grid.innerHTML = rest.map(function (p) {
-    var links = p.status === 'live'
-      ? '<a href="' + esc(p.repo) + '" target="_blank" rel="noopener">Repo ' + ext + '</a>' + (p.helm ? '<a href="' + esc(p.helm) + '" target="_blank" rel="noopener">Helm ' + ext + '</a>' : '')
-      : '<span class="chip">In progress</span>';
-    return '<article class="spot repo" data-cat="' + esc(p.category) + '">' +
-      '<span class="cat">' + esc(p.category) + '</span><h4>' + esc(p.title) + '</h4><p>' + esc(p.summary) + '</p>' +
-      '<div class="stack">' + p.tags.map(function (t) { return '<span class="chip">' + esc(t) + '</span>'; }).join('') + '</div>' +
-      '<div class="repo-links">' + links + '</div></article>';
-  }).join('');
+  if (data.length) {
+    playBtn.addEventListener('click', play);
+    $('#bp-prev').addEventListener('click', function () { stop(); setActive(active - 1); });
+    $('#bp-next').addEventListener('click', function () { stop(); setActive(active + 1); });
+    bpList.addEventListener('keydown', function (e) {
+      if (e.key !== 'ArrowDown' && e.key !== 'ArrowUp' && e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+      var vis = $$('.bp-item:not(.hide)', bpList), idx = vis.indexOf(document.activeElement);
+      if (idx < 0) return; e.preventDefault();
+      var nx = vis[(idx + (e.key === 'ArrowDown' || e.key === 'ArrowRight' ? 1 : -1) + vis.length) % vis.length];
+      nx.focus(); nx.click();
+    });
+    renderList('all'); select(0);
+  }
 
-  var filterBtns = $$('.filter'), count = $('#repo-count');
+  var filterBtns = $$('.filter');
   filterBtns.forEach(function (b) {
     var f = b.getAttribute('data-filter');
-    var n = f === 'all' ? rest.length : rest.filter(function (p) { return p.category === f; }).length;
+    var n = f === 'all' ? data.length : data.filter(function (p) { return p.category === f; }).length;
     if (f !== 'all' && !n) { b.hidden = true; return; }
     b.insertAdjacentHTML('beforeend', '<span class="n">' + n + '</span>');
     b.addEventListener('click', function () {
       filterBtns.forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); });
-      var shown = 0;
-      $$('.repo', grid).forEach(function (c) { var on = f === 'all' || c.getAttribute('data-cat') === f; c.classList.toggle('hide', !on); if (on) shown++; });
-      count.textContent = 'Showing ' + shown + ' of ' + rest.length + ' — each ships code, tests, deployment config, and docs.';
+      $$('.bp-item', bpList).forEach(function (it) { var p = data[+it.getAttribute('data-i')]; it.classList.toggle('hide', f !== 'all' && p.category !== f); });
+      var first = data.findIndex(function (p) { return f === 'all' || p.category === f; });
+      if (first >= 0 && (f !== 'all' && cur.category !== f)) select(first);
     });
   });
 
@@ -591,7 +728,7 @@
   var actions = [
     { label: 'Impact — measured outcomes', hint: 'section', run: go('impact') },
     { label: 'Experience — Honeywell, Infosys', hint: 'section', run: go('experience') },
-    { label: 'Projects — featured & repos', hint: 'section', run: go('projects') },
+    { label: 'Projects — architecture blueprints', hint: 'section', run: go('projects') },
     { label: 'Skills & education', hint: 'section', run: go('skills') },
     { label: 'Contact', hint: 'section', run: go('contact') },
     { label: 'Download résumé (PDF)', hint: 'file', run: function () { var a = document.createElement('a'); a.href = 'resume.pdf'; a.download = ''; document.body.appendChild(a); a.click(); a.remove(); } },
